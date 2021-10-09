@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/stone_hill.obj-92ad8ce7e7878126c9a9200638c033e6.mesh"
+
+[deps]
+
+files=[ "res://.import/stone_hill.obj-92ad8ce7e7878126c9a9200638c033e6.mesh" ]
+
+source_file="res://Objects/kenney_hexagonkit_1/Models/OBJ format/stone_hill.obj"
+dest_files=[ "res://.import/stone_hill.obj-92ad8ce7e7878126c9a9200638c033e6.mesh", "res://.import/stone_hill.obj-92ad8ce7e7878126c9a9200638c033e6.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

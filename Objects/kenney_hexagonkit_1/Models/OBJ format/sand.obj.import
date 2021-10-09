@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/sand.obj-0197857283e050ecd0dc541c810e754a.mesh"
+
+[deps]
+
+files=[ "res://.import/sand.obj-0197857283e050ecd0dc541c810e754a.mesh" ]
+
+source_file="res://Objects/kenney_hexagonkit_1/Models/OBJ format/sand.obj"
+dest_files=[ "res://.import/sand.obj-0197857283e050ecd0dc541c810e754a.mesh", "res://.import/sand.obj-0197857283e050ecd0dc541c810e754a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

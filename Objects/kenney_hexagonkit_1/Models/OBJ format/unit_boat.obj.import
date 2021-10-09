@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/unit_boat.obj-ca40d2dc3033bcf8ec5aad7e2d41a6e3.mesh"
+
+[deps]
+
+files=[ "res://.import/unit_boat.obj-ca40d2dc3033bcf8ec5aad7e2d41a6e3.mesh" ]
+
+source_file="res://Objects/kenney_hexagonkit_1/Models/OBJ format/unit_boat.obj"
+dest_files=[ "res://.import/unit_boat.obj-ca40d2dc3033bcf8ec5aad7e2d41a6e3.mesh", "res://.import/unit_boat.obj-ca40d2dc3033bcf8ec5aad7e2d41a6e3.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

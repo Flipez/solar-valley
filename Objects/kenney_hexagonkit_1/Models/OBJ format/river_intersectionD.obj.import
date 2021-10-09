@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/river_intersectionD.obj-d0a03a2bd190c7ebed4db5a42037ee4d.mesh"
+
+[deps]
+
+files=[ "res://.import/river_intersectionD.obj-d0a03a2bd190c7ebed4db5a42037ee4d.mesh" ]
+
+source_file="res://Objects/kenney_hexagonkit_1/Models/OBJ format/river_intersectionD.obj"
+dest_files=[ "res://.import/river_intersectionD.obj-d0a03a2bd190c7ebed4db5a42037ee4d.mesh", "res://.import/river_intersectionD.obj-d0a03a2bd190c7ebed4db5a42037ee4d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

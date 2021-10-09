@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/water_rocks.obj-568bdf0083bde4a3af92c68876cd8e0e.mesh"
+
+[deps]
+
+files=[ "res://.import/water_rocks.obj-568bdf0083bde4a3af92c68876cd8e0e.mesh" ]
+
+source_file="res://Objects/kenney_hexagonkit_1/Models/OBJ format/water_rocks.obj"
+dest_files=[ "res://.import/water_rocks.obj-568bdf0083bde4a3af92c68876cd8e0e.mesh", "res://.import/water_rocks.obj-568bdf0083bde4a3af92c68876cd8e0e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

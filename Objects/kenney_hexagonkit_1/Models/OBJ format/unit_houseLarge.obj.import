@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/unit_houseLarge.obj-a69e0020207d16b5c2bf5b0f4b920425.mesh"
+
+[deps]
+
+files=[ "res://.import/unit_houseLarge.obj-a69e0020207d16b5c2bf5b0f4b920425.mesh" ]
+
+source_file="res://Objects/kenney_hexagonkit_1/Models/OBJ format/unit_houseLarge.obj"
+dest_files=[ "res://.import/unit_houseLarge.obj-a69e0020207d16b5c2bf5b0f4b920425.mesh", "res://.import/unit_houseLarge.obj-a69e0020207d16b5c2bf5b0f4b920425.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
