@@ -8,6 +8,9 @@ func _ready():
 	$tmpParent/building_sheep.visible = false
 	$tmpParent/grass.visible = true
 	pass
+	
+func tick():
+	pass
 
 func _process(delta):
 	pass
@@ -37,16 +40,15 @@ func _on_grass_mouse_exited():
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.is_pressed() and event.button_index == BUTTON_LEFT and is_hovered:
+			var hex
 			if Statistics.selected_type == "plant":
-				var hex = load("res://Scenes/building_sheep.tscn").instance()
-				hex.set_translation(translation)
-				get_parent().add_child(hex)
-				queue_free()
+				hex = load("res://Scenes/building_sheep.tscn").instance()
 			elif Statistics.selected_type == "house":
-				var hex = load("res://Scenes/building_house.tscn").instance()
-				hex.set_translation(translation)
-				get_parent().add_child(hex)
-				queue_free()
+				hex = load("res://Scenes/building_house.tscn").instance()
+				hex.connect("more_people", Statistics, "more_people")
+			hex.set_translation(translation)
+			get_parent().add_child(hex)
+			queue_free()
 
 
 
