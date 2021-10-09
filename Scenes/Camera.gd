@@ -17,7 +17,7 @@ func _process(delta):
 
 func _input(event):
 	if event is InputEventMouseButton:
-		if event.is_pressed():
+		if event.is_pressed() and event.button_index == BUTTON_RIGHT:
 			dragging = true
 		else:
 			dragging = false

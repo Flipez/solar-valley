@@ -1,7 +1,8 @@
 extends Spatial
 
+
 func _ready():
-	var grass = load("res://Scenes/grass.tscn")
+	var grass = load("res://Scenes/placeholder.tscn")
 	
 	for i in range( -8,8):
 		for j in range (-5,5):

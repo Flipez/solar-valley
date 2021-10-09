@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Objects/grass.glb" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/main.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/Camera.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/grass.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/camera.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/placeholder.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/ui.tscn" type="PackedScene" id=5]
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 2 )
@@ -29,3 +30,5 @@ size = 0.1
 script = ExtResource( 3 )
 zoomSpeed = 10
 moveSpeed = 0.02
+
+[node name="Control" parent="Camera" instance=ExtResource( 5 )]

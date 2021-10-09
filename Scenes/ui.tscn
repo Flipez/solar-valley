@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Objects/blue_button13.png" type="Texture" id=1]
+[ext_resource path="res://Objects/blue_button05.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/ui.gd" type="Script" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="active" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="."]
+anchor_right = 0.023
+anchor_bottom = 0.063
+margin_left = 113.393
+margin_top = 199.068
+margin_right = 113.841
+margin_bottom = 185.268
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="energy" type="TextureProgress" parent="."]
+margin_left = 127.252
+margin_top = 105.833
+margin_right = 317.252
+margin_bottom = 154.833
+value = 50.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="money" type="Node" parent="."]
+
+[node name="money_text" type="Label" parent="money"]
+margin_left = 396.006
+margin_top = 202.165
+margin_right = 440.006
+margin_bottom = 216.165
+text = "HALLO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="toggled" from="CheckBox" to="." method="_on_CheckBox_toggled"]
