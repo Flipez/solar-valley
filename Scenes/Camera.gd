@@ -6,12 +6,11 @@ export var moveSpeed = 0.1
 # Declare member variables here.
 var dragging = false
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	set_process_input(true)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
@@ -29,12 +28,8 @@ func _input(event):
 		if event.is_pressed():
 			# zoom in
 			if event.button_index == BUTTON_WHEEL_UP:
-				fov -= self.zoomSpeed
+				self.translation -= transform.basis.z
 			# zoom out
 			if event.button_index == BUTTON_WHEEL_DOWN:
-				fov += self.zoomSpeed
+				self.translation += transform.basis.z
 		
-		
-		
-		
-		#Camera.position = get_global_mouse_position()
