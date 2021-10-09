@@ -13,7 +13,8 @@ func tick():
 	pass
 
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("ui_rotate") and is_hovered:
+		rotate_y(PI/3)
 
 func _on_grass_mouse_entered():
 	var highlight_material = load("res://Scenes/highlight.material")
@@ -47,10 +48,6 @@ func _input(event):
 				hex = load("res://Scenes/building_house.tscn").instance()
 				hex.connect("more_people", Statistics, "more_people")
 			hex.set_translation(translation)
+			hex.set_rotation(rotation)
 			get_parent().add_child(hex)
 			queue_free()
-
-
-
-
-
