@@ -9,7 +9,7 @@ export var people    : int
 export var selected_type = "plant"
 
 func _ready():
-  money     = 0
+  money     = 20
   energy    = 0
   water     = 0
   happiness = 0

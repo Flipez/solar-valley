@@ -7,6 +7,10 @@ var plant_1_preload = preload("res://Scenes/Hexagons/plant_1.tscn")
 var house_preload   = preload("res://Scenes/Hexagons/house.tscn")
 var solar_preload   = preload("res://Scenes/Hexagons/solar.tscn")
 
+var cost_plant = 100
+var cost_house = 200
+var cost_solar = 300
+
 onready var house_mesh   = $tmpParent/building_house
 onready var plant_1_mesh = $tmpParent/building_plant_1
 onready var solar_mesh   = $tmpParent/solarpanel
@@ -61,13 +65,19 @@ func _input(event):
 			var hex
 			match Statistics.selected_type:
 				"plant":
-					hex = plant_1_preload.instance()
+					buy_hexagon(plant_1_preload.instance(), cost_plant)
 				"house":
 					hex = house_preload.instance()
 					hex.connect("more_people", Statistics, "more_people")
+					buy_hexagon(hex, cost_house)
 				"solar":
-					hex = solar_preload.instance()
-			hex.set_translation(translation)
-			hex.set_rotation(rotation)
-			get_parent().add_child(hex)
-			queue_free()
+					buy_hexagon(solar_preload.instance(), cost_solar)
+
+
+func buy_hexagon(hexagon, cost):
+	if (Statistics.money >= cost):
+		Statistics.money -= cost
+		hexagon.set_translation(translation)
+		hexagon.set_rotation(rotation)
+		get_parent().add_child(hexagon)
+		queue_free()
