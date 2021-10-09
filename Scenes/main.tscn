@@ -10,7 +10,7 @@ script = ExtResource( 2 )
 [node name="hexagons" type="Node" parent="."]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 6, 0 )
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 2, 2 )
 size = 0.1
 script = ExtResource( 3 )
 zoomSpeed = 10
