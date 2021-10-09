@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Scenes/building_plant.gd" type="Script" id=1]
-[ext_resource path="res://Objects/grass.material" type="Material" id=2]
-[ext_resource path="res://Objects/wood.material" type="Material" id=3]
-[ext_resource path="res://Objects/dirt.material" type="Material" id=4]
-[ext_resource path="res://Scenes/hexagonal_collision_shape.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/jarst_solar_panel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/dirt.material" type="Material" id=1]
+[ext_resource path="res://Objects/wood.material" type="Material" id=2]
+[ext_resource path="res://Scenes/jarst_solar_panel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Hexagons/hexagonal_collision_shape.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/grass.material" type="Material" id=5]
+[ext_resource path="res://Scenes/Hexagons/solar.gd" type="Script" id=6]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "grass"
@@ -16,7 +16,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 48,
-"material": ExtResource( 4 ),
+"material": ExtResource( 1 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 48
@@ -28,7 +28,7 @@ surfaces/1 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 48,
-"material": ExtResource( 2 ),
+"material": ExtResource( 5 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 48
@@ -43,7 +43,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 12,
-"material": ExtResource( 3 ),
+"material": ExtResource( 2 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 60
@@ -55,14 +55,14 @@ surfaces/1 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 84,
-"material": ExtResource( 4 ),
+"material": ExtResource( 1 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 60
 }
 
 [node name="Spatial" type="Area"]
-script = ExtResource( 1 )
+script = ExtResource( 6 )
 
 [node name="tmpParent" type="Spatial" parent="."]
 
@@ -83,16 +83,16 @@ mesh = SubResource( 2 )
 material/0 = null
 material/1 = null
 
-[node name="jarst_solar_panel3" parent="tmpParent/solarpanel" instance=ExtResource( 6 )]
+[node name="jarst_solar_panel3" parent="tmpParent/solarpanel" instance=ExtResource( 3 )]
 transform = Transform( 2.54414, 0, -1.58976, 0, 3, 0, 1.58976, 0, 2.54414, -0.0288937, 0.215238, 0.378612 )
 
-[node name="jarst_solar_panel2" parent="tmpParent/solarpanel" instance=ExtResource( 6 )]
+[node name="jarst_solar_panel2" parent="tmpParent/solarpanel" instance=ExtResource( 3 )]
 transform = Transform( 2.54414, 0, -1.58976, 0, 3, 0, 1.58976, 0, 2.54414, -0.112231, 0.215238, 0.0424586 )
 
-[node name="jarst_solar_panel4" parent="tmpParent/solarpanel" instance=ExtResource( 6 )]
+[node name="jarst_solar_panel4" parent="tmpParent/solarpanel" instance=ExtResource( 3 )]
 transform = Transform( 2.54414, 0, -1.58976, 0, 3, 0, 1.58976, 0, 2.54414, 0.279974, 0.215238, 0.277472 )
 
-[node name="jarst_solar_panel5" parent="tmpParent/solarpanel" instance=ExtResource( 6 )]
+[node name="jarst_solar_panel5" parent="tmpParent/solarpanel" instance=ExtResource( 3 )]
 transform = Transform( 2.54414, 0, -1.58976, 0, 3, 0, 1.58976, 0, 2.54414, 0.209212, 0.215238, -0.0960615 )
 
-[node name="CollisionShape" parent="." instance=ExtResource( 5 )]
+[node name="CollisionShape" parent="." instance=ExtResource( 4 )]
