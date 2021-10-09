@@ -32,7 +32,7 @@ func _on_HouseButton_pressed():
 
 
 func _on_SolarButtton_pressed():
-	Statistics.selected_type = "solor"
+	Statistics.selected_type = "solar"
 	$BuildSelection/PlantsButton.pressed = false
 	$BuildSelection/HouseButton.pressed = false
 	$BuildSelection/SolarButtton.pressed = true

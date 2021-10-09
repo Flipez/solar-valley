@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/building_sheep.glb-e5fb519bb86d573393304bc3d743885f.scn"
+path="res://.import/radish.glb-af4090f25d5138c73fdbd9c5fc639126.scn"
 
 [deps]
 
-source_file="res://Objects/building_sheep.glb"
-dest_files=[ "res://.import/building_sheep.glb-e5fb519bb86d573393304bc3d743885f.scn" ]
+source_file="res://Objects/food/radish.glb"
+dest_files=[ "res://.import/radish.glb-af4090f25d5138c73fdbd9c5fc639126.scn" ]
 
 [params]
 
