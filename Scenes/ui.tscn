@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Objects/UI/plant_button.png" type="Texture" id=1]
 [ext_resource path="res://Objects/UI/house_button.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Objects/UI/house_button_toggled.png" type="Texture" id=5]
 [ext_resource path="res://Objects/UI/plant_button_toggled.png" type="Texture" id=6]
 [ext_resource path="res://Objects/UI/solar_button_toggled.png" type="Texture" id=7]
+[ext_resource path="res://Objects/UI/coin.png" type="Texture" id=8]
+[ext_resource path="res://Objects/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=9]
 
 [sub_resource type="Theme" id=1]
 Button/colors/font_color = Color( 0, 0, 0, 1 )
@@ -439,6 +441,10 @@ WindowDialog/styles/panel = null
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.568627, 0.486275, 0.266667, 0.505882 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 23
+font_data = ExtResource( 9 )
+
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -498,6 +504,29 @@ toggle_mode = true
 action_mode = 0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 7 )
+
+[node name="MoneyIcon" type="TextureRect" parent="."]
+margin_left = 876.612
+margin_top = 34.8863
+margin_right = 1004.61
+margin_bottom = 162.886
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoneyLabel" type="Label" parent="."]
+margin_left = 921.362
+margin_top = 41.1137
+margin_right = 969.362
+margin_bottom = 70.1137
+custom_fonts/font = SubResource( 3 )
+text = "150"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="resized" from="." to="." method="_on_Control_resized"]
 [connection signal="sort_children" from="ButtonBackground/BuildSelection" to="." method="_on_BuildSelection_sort_children"]
