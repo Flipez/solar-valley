@@ -27,6 +27,5 @@ func _ready():
 
 
 func _on_Timer_timeout():
-  print("tick")
   for hex in hexagons.get_children():
     hex.tick()

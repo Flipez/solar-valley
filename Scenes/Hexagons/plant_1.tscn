@@ -10,17 +10,7 @@
 [ext_resource path="res://Scenes/Hexagons/hexagonal_collision_shape.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/grass.material" type="Material" id=9]
 [ext_resource path="res://Objects/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=10]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Area
-
-func _ready():
-  pass
-
-
-func tick():
-  pass
-"
+[ext_resource path="res://Scenes/Hexagons/plant_1.gd" type="Script" id=11]
 
 [sub_resource type="ArrayMesh" id=2]
 surfaces/0 = {
@@ -108,13 +98,14 @@ radius = 0.8
 height = 0.3
 
 [sub_resource type="DynamicFont" id=8]
+size = 10
 font_data = ExtResource( 10 )
 
 [sub_resource type="ViewportTexture" id=7]
 viewport_path = NodePath("Spatial/Viewport")
 
 [node name="Spatial" type="Area"]
-script = SubResource( 1 )
+script = ExtResource( 11 )
 
 [node name="tmpParent" type="Spatial" parent="."]
 
@@ -212,10 +203,13 @@ transparent_bg = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 8 )
-text = "SOME TEXT "
+align = 1
+valign = 1
 
 [node name="Sprite3D" type="Sprite3D" parent="Spatial"]
-transform = Transform( 200, 0, 0, 0, 200, 0, 0, 0, 200, 0, 0, 0 )
 flip_v = true
 billboard = 1
 texture = SubResource( 7 )
+
+[connection signal="mouse_entered" from="." to="." method="_on_Spatial_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Spatial_mouse_exited"]
