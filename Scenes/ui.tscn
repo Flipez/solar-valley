@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Objects/UI/plant_button.png" type="Texture" id=1]
 [ext_resource path="res://Objects/UI/house_button.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Objects/UI/solar_button_toggled.png" type="Texture" id=7]
 [ext_resource path="res://Objects/UI/coin.png" type="Texture" id=8]
 [ext_resource path="res://Objects/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Objects/UI/massiveMultiplayer.png" type="Texture" id=10]
 
 [sub_resource type="Theme" id=1]
 Button/colors/font_color = Color( 0, 0, 0, 1 )
@@ -448,6 +449,8 @@ font_data = ExtResource( 9 )
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -0.840942
+margin_right = -0.840942
 mouse_filter = 2
 script = ExtResource( 3 )
 __meta__ = {
@@ -506,10 +509,10 @@ texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 7 )
 
 [node name="MoneyIcon" type="TextureRect" parent="."]
-margin_left = 876.612
-margin_top = 34.8863
-margin_right = 1004.61
-margin_bottom = 162.886
+margin_left = 900.998
+margin_top = 37.409
+margin_right = 1029.0
+margin_bottom = 165.409
 rect_scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 8 )
 __meta__ = {
@@ -517,19 +520,41 @@ __meta__ = {
 }
 
 [node name="MoneyLabel" type="Label" parent="."]
-margin_left = 921.362
+margin_left = 946.589
 margin_top = 41.1137
-margin_right = 969.362
+margin_right = 1010.59
 margin_bottom = 70.1137
 custom_fonts/font = SubResource( 3 )
-text = "150"
+text = "0000"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="resized" from="." to="." method="_on_Control_resized"]
-[connection signal="sort_children" from="ButtonBackground/BuildSelection" to="." method="_on_BuildSelection_sort_children"]
+[node name="PeopleIcon" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -305.679
+margin_top = 32.1086
+margin_right = -255.679
+margin_bottom = 82.1086
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PeopleLabel" type="Label" parent="."]
+margin_left = 770.001
+margin_top = 41.1137
+margin_right = 834.001
+margin_bottom = 70.1137
+custom_fonts/font = SubResource( 3 )
+text = "0000"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="ButtonBackground/BuildSelection/PlantsButton" to="." method="_on_PlantsButton_pressed"]
 [connection signal="pressed" from="ButtonBackground/BuildSelection/HouseButton" to="." method="_on_HouseButton_pressed"]
 [connection signal="pressed" from="ButtonBackground/BuildSelection/SolarButtton" to="." method="_on_SolarButtton_pressed"]
