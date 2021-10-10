@@ -9,8 +9,8 @@ func _ready():
   var mountain    = load("res://Scenes/Hexagons/mountain.tscn")
   tick_timer.start()
 
-  for i in range( -8,8):
-    for j in range (-5,5):
+  for i in range( -10,10):
+    for j in range (-6,6):
       var new_placeholder
       var new_placeholder2
       if i == 0 and j == 0:
@@ -23,7 +23,7 @@ func _ready():
         hexagons.add_child(new_placeholder)
         continue
       else:
-        if (abs(i) + abs(j) > 9):
+        if (abs(i) + abs(j) > 9) or (abs(j) > 4) or (abs(i) > 8):
           new_placeholder = mountain.instance()
           new_placeholder2 = mountain.instance()
         else:
