@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/solar_button.png-c5654db5574134c86959465ed812856a.stex"
+path="res://.import/Solar_Button_Toggled.png-99ae410a34dbc6d71aa8dec3a8749a96.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/solar_button.png"
-dest_files=[ "res://.import/solar_button.png-c5654db5574134c86959465ed812856a.stex" ]
+source_file="res://Scenes/Hexagons/Solar_Button_Toggled.png"
+dest_files=[ "res://.import/Solar_Button_Toggled.png-99ae410a34dbc6d71aa8dec3a8749a96.stex" ]
 
 [params]
 
