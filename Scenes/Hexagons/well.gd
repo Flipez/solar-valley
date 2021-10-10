@@ -3,7 +3,8 @@ extends Area
 var surrounding_plants = 0
 
 onready var influence_range = $influence_range
-
+onready var label           = $Spatial
+onready var label_text      = $Spatial/Viewport/Label
 
 func _ready():
   pass # Replace with function body.
@@ -21,4 +22,10 @@ func plants():
 
 
 func _on_well_mouse_entered():
-  pass # Replace with function body.
+  plants()
+  label_text.text = "surrounding plants: " + String(surrounding_plants)
+  $Spatial.visible = true
+
+
+func _on_well_mouse_exited():
+  $Spatial.visible = false

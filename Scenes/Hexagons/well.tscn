@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Objects/dirt.material" type="Material" id=1]
 [ext_resource path="res://Objects/grass.material" type="Material" id=2]
 [ext_resource path="res://Objects/foliage.material" type="Material" id=3]
 [ext_resource path="res://Objects/wood.material" type="Material" id=4]
 [ext_resource path="res://Objects/stone.material" type="Material" id=5]
+[ext_resource path="res://Objects/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Objects/water.material" type="Material" id=7]
 [ext_resource path="res://Scenes/Hexagons/hexagonal_collision_shape.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Hexagons/well.gd" type="Script" id=9]
@@ -151,6 +152,9 @@ surfaces/1 = {
 radius = 0.8
 height = 0.3
 
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 6 )
+
 [sub_resource type="ViewportTexture" id=8]
 viewport_path = NodePath("Spatial/Viewport")
 
@@ -225,13 +229,15 @@ transparent_bg = true
 [node name="Label" type="Label" parent="Spatial/Viewport"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+custom_fonts/font = SubResource( 9 )
 text = "SOME TEXT "
 align = 1
 valign = 1
 
 [node name="Sprite3D" type="Sprite3D" parent="Spatial"]
 flip_v = true
-billboard = 2
+billboard = 1
 texture = SubResource( 8 )
 
 [connection signal="mouse_entered" from="." to="." method="_on_well_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_well_mouse_exited"]
