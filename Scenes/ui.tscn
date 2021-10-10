@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Objects/UI/plant_button.png" type="Texture" id=1]
 [ext_resource path="res://Objects/UI/house_button.png" type="Texture" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Objects/UI/coin.png" type="Texture" id=8]
 [ext_resource path="res://Objects/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://Objects/UI/massiveMultiplayer.png" type="Texture" id=10]
+[ext_resource path="res://Objects/UI/Well_Button.png" type="Texture" id=11]
+[ext_resource path="res://Objects/UI/Well_Button_Toggled.png" type="Texture" id=12]
 
 [sub_resource type="Theme" id=1]
 Button/colors/font_color = Color( 0, 0, 0, 1 )
@@ -460,9 +462,9 @@ __meta__ = {
 [node name="ButtonBackground" type="PanelContainer" parent="."]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -229.0
+margin_top = -306.0
 margin_right = 150.0
-margin_bottom = 229.0
+margin_bottom = 306.0
 theme = SubResource( 1 )
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
@@ -471,7 +473,7 @@ __meta__ = {
 
 [node name="BuildSelection" type="VBoxContainer" parent="ButtonBackground"]
 margin_right = 150.0
-margin_bottom = 458.0
+margin_bottom = 612.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -507,6 +509,18 @@ toggle_mode = true
 action_mode = 0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 7 )
+
+[node name="WellButton" type="TextureButton" parent="ButtonBackground/BuildSelection"]
+margin_top = 462.0
+margin_right = 150.0
+margin_bottom = 612.0
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MoneyIcon" type="TextureRect" parent="."]
 anchor_left = 1.0
@@ -564,3 +578,4 @@ __meta__ = {
 [connection signal="pressed" from="ButtonBackground/BuildSelection/PlantsButton" to="." method="_on_PlantsButton_pressed"]
 [connection signal="pressed" from="ButtonBackground/BuildSelection/HouseButton" to="." method="_on_HouseButton_pressed"]
 [connection signal="pressed" from="ButtonBackground/BuildSelection/SolarButtton" to="." method="_on_SolarButtton_pressed"]
+[connection signal="pressed" from="ButtonBackground/BuildSelection/WellButton" to="." method="_on_WellButton_pressed"]

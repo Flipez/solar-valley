@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Hexagons/plant_1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Hexagons/solar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Hexagons/house.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Hexagons/well.tscn" type="PackedScene" id=4]
 
 [node name="IconCreate" type="Spatial"]
 
@@ -16,10 +17,13 @@ transform = Transform( 1, 0, 0, 0, 0.837337, 0.546687, 0, -0.546687, 0.837337, 0
 fov = 36.5
 
 [node name="building_house" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+visible = false
 
 [node name="Plant" parent="." instance=ExtResource( 1 )]
 visible = false
 
 [node name="Solar" parent="." instance=ExtResource( 2 )]
 visible = false
+
+[node name="well" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 0, 0, 0 )
