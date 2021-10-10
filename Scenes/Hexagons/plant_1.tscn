@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Objects/dirt.material" type="Material" id=1]
 [ext_resource path="res://Objects/wood.material" type="Material" id=2]
@@ -14,11 +14,11 @@
 script/source = "extends Area
 
 func _ready():
-	pass
+  pass
 
 
 func tick():
-	pass
+  pass
 "
 
 [sub_resource type="ArrayMesh" id=2]
@@ -105,6 +105,9 @@ surfaces/1 = {
 [sub_resource type="CylinderShape" id=6]
 radius = 0.8
 height = 0.3
+
+[sub_resource type="ViewportTexture" id=7]
+viewport_path = NodePath("Spatial/Viewport")
 
 [node name="Spatial" type="Area"]
 script = SubResource( 1 )
@@ -193,3 +196,21 @@ collision_mask = 32
 
 [node name="CollisionShape" type="CollisionShape" parent="influence_range"]
 shape = SubResource( 6 )
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94344, 0 )
+
+[node name="Viewport" type="Viewport" parent="Spatial"]
+size = Vector2( 300, 30 )
+transparent_bg = true
+
+[node name="Label" type="Label" parent="Spatial/Viewport"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "SOME TEXT "
+
+[node name="Sprite3D" type="Sprite3D" parent="Spatial"]
+transform = Transform( 200, 0, 0, 0, 200, 0, 0, 0, 200, 0, 0, 0 )
+flip_v = true
+billboard = 2
+texture = SubResource( 7 )

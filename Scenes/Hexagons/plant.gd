@@ -1,8 +1,9 @@
 extends Area
 
 func _ready():
-	pass
+  Statistics.plants += 1
+  pass
 
 
 func tick():
-	pass
+  pass
