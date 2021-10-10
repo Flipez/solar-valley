@@ -509,10 +509,12 @@ texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 7 )
 
 [node name="MoneyIcon" type="TextureRect" parent="."]
-margin_left = 900.998
-margin_top = 37.409
-margin_right = 1029.0
-margin_bottom = 165.409
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -125.624
+margin_top = 36.8654
+margin_right = 2.37842
+margin_bottom = 164.865
 rect_scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 8 )
 __meta__ = {
@@ -520,10 +522,12 @@ __meta__ = {
 }
 
 [node name="MoneyLabel" type="Label" parent="."]
-margin_left = 946.589
-margin_top = 41.1137
-margin_right = 1010.59
-margin_bottom = 70.1137
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -77.0823
+margin_top = 42.8115
+margin_right = -13.0813
+margin_bottom = 71.8115
 custom_fonts/font = SubResource( 3 )
 text = "0000"
 align = 2
@@ -534,22 +538,24 @@ __meta__ = {
 [node name="PeopleIcon" type="TextureRect" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -305.679
-margin_top = 32.1086
-margin_right = -255.679
-margin_bottom = 82.1086
+margin_left = -306.869
+margin_top = 28.541
+margin_right = -256.869
+margin_bottom = 78.541
 texture = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PeopleLabel" type="Label" parent="."]
-margin_left = 770.001
-margin_top = 41.1137
-margin_right = 834.001
-margin_bottom = 70.1137
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -262.598
+margin_top = 41.6223
+margin_right = -198.598
+margin_bottom = 70.6223
 custom_fonts/font = SubResource( 3 )
-text = "0000"
+text = "000"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false

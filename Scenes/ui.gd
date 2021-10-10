@@ -1,5 +1,9 @@
 extends Control
 
+func _process(delta):
+  $MoneyLabel.text = "%04d" % Statistics.money
+  $PeopleLabel.text = "%03d" % Statistics.people
+
 func _on_PlantsButton_pressed():
   Statistics.selected_type = "plant"
   $ButtonBackground/BuildSelection/PlantsButton.pressed = true
@@ -11,7 +15,6 @@ func _on_HouseButton_pressed():
   $ButtonBackground/BuildSelection/PlantsButton.pressed = false
   $ButtonBackground/BuildSelection/HouseButton.pressed = true
   $ButtonBackground/BuildSelection/SolarButtton.pressed = false
-
 
 func _on_SolarButtton_pressed():
   Statistics.selected_type = "solar"
