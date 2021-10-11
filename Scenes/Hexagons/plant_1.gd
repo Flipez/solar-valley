@@ -3,9 +3,7 @@ extends Area
 var surrounding_houses    = 0
 var surrounding_wells     = 0
 export var elapsed_ticks  = 0
-export var plants : float = 0.0
-
-signal more_plants
+var number_plants         = float(0)
 
 onready var influence_range = $influence_range
 onready var label           = $Spatial
@@ -18,8 +16,9 @@ func _ready():
 func tick():
   elapsed_ticks +=1
   houses()
-  if (elapsed_ticks % 30 == 0) && plants < 10:
-    plants += 1
+  wells()
+  if (elapsed_ticks % 10 == 0) && number_plants < 10:
+    number_plants += 1.0
 
 
 func houses():
@@ -29,7 +28,10 @@ func houses():
       # increase house counter
       surrounding_houses += 1
       #decrease plant counter
-      plants -= body.get_parent().people / 30
+      if number_plants > 0:
+        number_plants -= body.get_parent().people / 30.0 / body.get_parent().surrounding_plants
+      else: 
+        body.get_parent().update_people(-1)
 
 
 func wells():
@@ -40,9 +42,7 @@ func wells():
 
 
 func _on_Spatial_mouse_entered():
-  houses()
-  wells()
-  label_text.text = "plants: " + String(plants) + "\n" \
+  label_text.text = "plants: " + String(number_plants) + "\n" \
                     + "surrounding houses: " + String(surrounding_houses) + "\n" \
                     + "surrounding wells: " + String(surrounding_wells) 
   $Spatial.visible = true

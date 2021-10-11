@@ -91,7 +91,7 @@ surfaces/0 = {
 "vertex_count": 48
 }
 
-[sub_resource type="ArrayMesh" id=5]
+[sub_resource type="ArrayMesh" id=4]
 resource_name = "tree"
 surfaces/0 = {
 "aabb": AABB( -0.1, 0, -0.1, 0.20001, 0.38, 0.20001 ),
@@ -118,7 +118,7 @@ surfaces/1 = {
 "vertex_count": 72
 }
 
-[sub_resource type="ArrayMesh" id=9]
+[sub_resource type="ArrayMesh" id=5]
 resource_name = "path_end"
 surfaces/0 = {
 "aabb": AABB( -0.04, 0, -0.1395, 0.54, 0.025, 0.335 ),
@@ -149,11 +149,11 @@ surfaces/1 = {
 radius = 0.8
 height = 0.3
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=7]
 size = 10
 font_data = ExtResource( 9 )
 
-[sub_resource type="ViewportTexture" id=7]
+[sub_resource type="ViewportTexture" id=8]
 viewport_path = NodePath("Spatial/Viewport")
 
 [node name="building_house" type="Area"]
@@ -181,55 +181,55 @@ material/0 = null
 
 [node name="tree" type="MeshInstance" parent="tmpParent/building_house"]
 transform = Transform( 0.66684, 0, -0.385, 0, 0.77, 0, 0.385, 0, 0.66684, 0.0536608, 0.2, -0.294954 )
-mesh = SubResource( 5 )
+mesh = SubResource( 4 )
 material/0 = null
 material/1 = null
 
 [node name="tree2" type="MeshInstance" parent="tmpParent/building_house"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.227451, 0.2, -0.213525 )
-mesh = SubResource( 5 )
+mesh = SubResource( 4 )
 material/0 = null
 material/1 = null
 
 [node name="tree3" type="MeshInstance" parent="tmpParent/building_house"]
 transform = Transform( 0.600931, 0, 0.481437, 0, 0.77, 0, -0.481437, 0, 0.600931, 0.298527, 0.2, 0.223044 )
-mesh = SubResource( 5 )
+mesh = SubResource( 4 )
 material/0 = null
 material/1 = null
 
 [node name="path_end" type="MeshInstance" parent="tmpParent/building_house"]
 transform = Transform( -8.9407e-08, 0, -0.4, 0, 1, 0, 1.1, 0, 0, 0.481772, 0.199991, -0.273628 )
-mesh = SubResource( 9 )
+mesh = SubResource( 5 )
 material/0 = null
 material/1 = null
 
 [node name="path_end2" type="MeshInstance" parent="tmpParent/building_house"]
 transform = Transform( 0.952628, 0, -0.2, 0, 1, 0, 0.55, 0, 0.346411, -0.00570491, 0.200004, -0.551958 )
-mesh = SubResource( 9 )
+mesh = SubResource( 5 )
 material/0 = null
 material/1 = null
 
 [node name="path_end3" type="MeshInstance" parent="tmpParent/building_house"]
 transform = Transform( 0.95263, 0, 0.2, 0, 1, 0, -0.550001, 0, 0.34641, -0.487089, 0.200366, -0.272084 )
-mesh = SubResource( 9 )
+mesh = SubResource( 5 )
 material/0 = null
 material/1 = null
 
 [node name="path_end4" type="MeshInstance" parent="tmpParent/building_house"]
 transform = Transform( 2.98023e-08, 0, 0.4, 0, 1, 0, -1.1, 0, -5.96046e-08, -0.48683, 0.200592, 0.282301 )
-mesh = SubResource( 9 )
+mesh = SubResource( 5 )
 material/0 = null
 material/1 = null
 
 [node name="path_end5" type="MeshInstance" parent="tmpParent/building_house"]
 transform = Transform( -0.952628, 0, 0.2, 0, 1, 0, -0.55, 0, -0.346411, -0.0126709, 0.20061, 0.553291 )
-mesh = SubResource( 9 )
+mesh = SubResource( 5 )
 material/0 = null
 material/1 = null
 
 [node name="path_end6" type="MeshInstance" parent="tmpParent/building_house"]
 transform = Transform( -0.952628, 0, -0.2, 0, 1, 0, 0.55, 0, -0.34641, 0.468663, 0.200353, 0.280845 )
-mesh = SubResource( 9 )
+mesh = SubResource( 5 )
 material/0 = null
 material/1 = null
 
@@ -254,14 +254,14 @@ transparent_bg = true
 [node name="Label" type="Label" parent="Spatial/Viewport"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 align = 1
 valign = 1
 
 [node name="Sprite3D" type="Sprite3D" parent="Spatial"]
 flip_v = true
 billboard = 1
-texture = SubResource( 7 )
+texture = SubResource( 8 )
 
 [connection signal="mouse_entered" from="." to="." method="_on_building_house_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_building_house_mouse_exited"]

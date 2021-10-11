@@ -1,11 +1,11 @@
 extends Area
 
-var surrounding_plants   = 0
+var surrounding_plants   = 1 # 1 avoids dividiing by zero in plant_1.gd
 var surrounding_solar    = 0
 export var elapsed_ticks = 0
-var people               = 1
+var people               = 0
 
-signal more_people
+signal update_people
 
 onready var influence_range = $influence_range
 onready var label           = $Spatial
@@ -13,7 +13,7 @@ onready var label_text      = $Spatial/Viewport/Label
 
 
 func _ready():
-  emit_signal("more_people")
+  update_people(1)
 
 
 func plants():
@@ -44,8 +44,19 @@ func tick():
   if n > 10:
     print("plant_1.gd: n is > 10")
   if (elapsed_ticks % 10 == 0) && people < n:
-    people += 1
-    emit_signal("more_people")
+    update_people(+1)
+
+
+func update_people(amount):
+  if ((people + amount) <= 0):
+    emit_signal("update_people", people - 1)
+    people = 1
+  elif ((people + amount) > 10):
+    emit_signal("update_people", 10 - people)
+    people = 10
+  else:
+    people += amount
+    emit_signal("update_people", amount)
 
 
 func _on_building_house_mouse_entered():

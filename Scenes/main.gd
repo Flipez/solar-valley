@@ -18,7 +18,7 @@ func _ready():
         new_placeholder2.set_translation(Vector3(i+0.5, 0, 0.866+1.732*j))
         hexagons.add_child(new_placeholder2)
         new_placeholder = house.instance()
-        new_placeholder.connect("more_people", Statistics, "more_people")
+        new_placeholder.connect("update_people", Statistics, "update_people")
         new_placeholder.set_translation(Vector3(i, 0, 1.732*j))
         hexagons.add_child(new_placeholder)
         continue
