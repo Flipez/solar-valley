@@ -20,11 +20,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="TextureRect" parent="."]
 modulate = Color( 0.647059, 0.545098, 0.443137, 1 )
-position = Vector2( 521.607, 302.381 )
-scale = Vector2( 0.643975, 0.643975 )
+margin_right = 1024.0
+margin_bottom = 600.0
 texture = ExtResource( 2 )
+expand = true
+stretch_mode = 7
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 margin_right = 1024.0
