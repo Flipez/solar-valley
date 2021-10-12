@@ -1,7 +1,7 @@
 extends MarginContainer
-# https://www.youtube.com/watch?v=Jjv2MWbQVhs
 
-const new_game = preload("res://Scenes/main.tscn")
+#const new_game = preload("res://Scenes/main.tscn")
+#const controls = preload("res://Scenes/menu_control.tscn")
 
 onready var selector_new      = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/New/HBoxContainer/selector
 onready var selector_load     = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Load/HBoxContainer/selector
@@ -20,8 +20,7 @@ func _process(delta):
 
 
 func _on_new_pressed():
-  get_parent().add_child(new_game.instance())
-  queue_free()
+    get_tree().change_scene("res://Scenes/menu_control.tscn")
 
 
 func _on_load_game_pressed():
@@ -33,7 +32,7 @@ func _on_tutorial_pressed():
 
 
 func _on_controls_pressed():
-  pass # Replace with function body.
+  get_tree().change_scene("res://Scenes/menu_control.tscn")
 
 
 func _on_exit_pressed():
