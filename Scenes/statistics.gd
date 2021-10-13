@@ -2,6 +2,7 @@ extends Node
 
 export var money     : float
 export var people    : int
+export var night  = true
 
 export var selected_type = "plant"
 
