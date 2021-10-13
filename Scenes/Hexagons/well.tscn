@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Objects/dirt.material" type="Material" id=1]
 [ext_resource path="res://Objects/grass.material" type="Material" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Objects/water.material" type="Material" id=7]
 [ext_resource path="res://Scenes/Hexagons/hexagonal_collision_shape.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Hexagons/well.gd" type="Script" id=9]
+[ext_resource path="res://Objects/lanternGlass.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "building_market"
@@ -79,7 +80,7 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
-[sub_resource type="ArrayMesh" id=5]
+[sub_resource type="ArrayMesh" id=4]
 resource_name = "tree"
 surfaces/0 = {
 "aabb": AABB( -0.1, 0, -0.1, 0.20001, 0.38, 0.20001 ),
@@ -106,7 +107,7 @@ surfaces/1 = {
 "vertex_count": 72
 }
 
-[sub_resource type="ArrayMesh" id=6]
+[sub_resource type="ArrayMesh" id=5]
 resource_name = "well"
 surfaces/0 = {
 "aabb": AABB( -0.0866025, 0, -0.1, 0.173205, 0.1, 0.2 ),
@@ -133,7 +134,7 @@ surfaces/1 = {
 "vertex_count": 78
 }
 
-[sub_resource type="ArrayMesh" id=10]
+[sub_resource type="ArrayMesh" id=6]
 resource_name = "path_end"
 surfaces/0 = {
 "aabb": AABB( -0.04, 0, -0.1395, 0.54, 0.025, 0.335 ),
@@ -164,17 +165,20 @@ surfaces/1 = {
 radius = 0.8
 height = 0.3
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=8]
 size = 10
 font_data = ExtResource( 6 )
 
-[sub_resource type="ViewportTexture" id=8]
+[sub_resource type="ViewportTexture" id=9]
 viewport_path = NodePath("Spatial/Viewport")
 
 [node name="well" type="Area"]
 script = ExtResource( 9 )
 
 [node name="tmpParent" type="Spatial" parent="."]
+
+[node name="lanternGlass" parent="tmpParent" instance=ExtResource( 10 )]
+transform = Transform( 0.191734, 0, -0.0569035, 0, 0.2, 0, 0.0569035, 0, 0.191734, 0.328857, 0.262637, 0.118324 )
 
 [node name="building_well" type="MeshInstance" parent="tmpParent"]
 mesh = SubResource( 1 )
@@ -194,63 +198,66 @@ material/0 = null
 
 [node name="tree" type="MeshInstance" parent="tmpParent/building_well"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.191911, 0.2, 0.151865 )
-mesh = SubResource( 5 )
+mesh = SubResource( 4 )
 material/0 = null
 material/1 = null
 
 [node name="tree2" type="MeshInstance" parent="tmpParent/building_well"]
 transform = Transform( 0.66684, 0, -0.385, 0, 0.77, 0, 0.385, 0, 0.66684, -0.0222813, 0.2, -0.303196 )
-mesh = SubResource( 5 )
+mesh = SubResource( 4 )
 material/0 = null
 material/1 = null
 
 [node name="tree3" type="MeshInstance" parent="tmpParent/building_well"]
 transform = Transform( 0.66684, 0, -0.385, 0, 0.77, 0, 0.385, 0, 0.66684, 0.000109089, 0.2, 0.325845 )
-mesh = SubResource( 5 )
+mesh = SubResource( 4 )
 material/0 = null
 material/1 = null
 
 [node name="well" type="MeshInstance" parent="tmpParent/building_well"]
 transform = Transform( 1, 0, 0, 0, 0.875241, 0, 0, 0, 1, -1.19837e-13, 0.2, -1.08287e-13 )
-mesh = SubResource( 6 )
+mesh = SubResource( 5 )
 material/0 = null
 material/1 = null
 
 [node name="path_end" type="MeshInstance" parent="tmpParent/building_well"]
 transform = Transform( -8.9407e-08, 0, -0.4, 0, 1, 0, 1.1, 0, 0, 0.481772, 0.199991, -0.273628 )
-mesh = SubResource( 10 )
+mesh = SubResource( 6 )
 material/0 = null
 material/1 = null
 
 [node name="path_end2" type="MeshInstance" parent="tmpParent/building_well"]
 transform = Transform( 0.952628, 0, -0.2, 0, 1, 0, 0.55, 0, 0.346411, -0.00570491, 0.200004, -0.551958 )
-mesh = SubResource( 10 )
+mesh = SubResource( 6 )
 material/0 = null
 material/1 = null
 
 [node name="path_end3" type="MeshInstance" parent="tmpParent/building_well"]
 transform = Transform( 0.95263, 0, 0.2, 0, 1, 0, -0.550001, 0, 0.34641, -0.487089, 0.200366, -0.272084 )
-mesh = SubResource( 10 )
+mesh = SubResource( 6 )
 material/0 = null
 material/1 = null
 
 [node name="path_end4" type="MeshInstance" parent="tmpParent/building_well"]
 transform = Transform( 2.98023e-08, 0, 0.4, 0, 1, 0, -1.1, 0, -5.96046e-08, -0.48683, 0.200592, 0.282301 )
-mesh = SubResource( 10 )
+mesh = SubResource( 6 )
 material/0 = null
 material/1 = null
 
 [node name="path_end5" type="MeshInstance" parent="tmpParent/building_well"]
 transform = Transform( -0.952628, 0, 0.2, 0, 1, 0, -0.55, 0, -0.346411, -0.0126709, 0.20061, 0.553291 )
-mesh = SubResource( 10 )
+mesh = SubResource( 6 )
 material/0 = null
 material/1 = null
 
 [node name="path_end6" type="MeshInstance" parent="tmpParent/building_well"]
 transform = Transform( -0.952628, 0, -0.2, 0, 1, 0, 0.55, 0, -0.34641, 0.468663, 0.200353, 0.280845 )
-mesh = SubResource( 10 )
+mesh = SubResource( 6 )
 material/0 = null
 material/1 = null
+
+[node name="lanternGlass2" parent="tmpParent" instance=ExtResource( 10 )]
+transform = Transform( 0.191734, 0, -0.0569035, 0, 0.2, 0, 0.0569035, 0, 0.191734, -0.247891, 0.19992, -0.0735298 )
 
 [node name="CollisionShape" parent="." instance=ExtResource( 8 )]
 
@@ -273,14 +280,14 @@ transparent_bg = true
 [node name="Label" type="Label" parent="Spatial/Viewport"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 8 )
 align = 1
 valign = 1
 
 [node name="Sprite3D" type="Sprite3D" parent="Spatial"]
 flip_v = true
 billboard = 1
-texture = SubResource( 8 )
+texture = SubResource( 9 )
 
 [connection signal="mouse_entered" from="." to="." method="_on_well_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_well_mouse_exited"]
