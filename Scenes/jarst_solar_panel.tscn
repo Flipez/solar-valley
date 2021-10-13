@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Objects/2.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/jarst_solar_panel.gd" type="Script" id=2]
 
 [sub_resource type="ArrayMesh" id=1]
 blend_shape_mode = 0
@@ -16,20 +17,28 @@ surfaces/0 = {
 "vertex_count": 379
 }
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 1 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "CINEMA_4D_Main"
+[sub_resource type="Animation" id=3]
 length = 0.001
 
 [node name="jarst_solar_panel" type="Spatial"]
+script = ExtResource( 2 )
 
 [node name="RootNode" type="Spatial" parent="."]
 
 [node name="Cube_100" type="MeshInstance" parent="RootNode"]
 mesh = SubResource( 1 )
-material/0 = SubResource( 3 )
+material/0 = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="RootNode"]
-anims/CINEMA_4D_Main = SubResource( 2 )
+anims/CINEMA_4D_Main = SubResource( 3 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.828676, 0.559728, 0, -0.559728, 0.828676, -3.27798e-05, 0.0516267, -0.00263709 )
+light_color = Color( 0, 1, 0, 1 )
+light_energy = 16.0
+light_indirect_energy = 0.0
+spot_range = 0.2
+spot_angle = 3.0
