@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Objects/stone.material" type="Material" id=1]
 [ext_resource path="res://Objects/dirt.material" type="Material" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Objects/grass.material" type="Material" id=7]
 [ext_resource path="res://Scenes/Hexagons/house.gd" type="Script" id=8]
 [ext_resource path="res://Objects/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Objects/lightpostSingle.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "building_house"
@@ -232,6 +233,9 @@ transform = Transform( -0.952628, 0, -0.2, 0, 1, 0, 0.55, 0, -0.34641, 0.468663,
 mesh = SubResource( 5 )
 material/0 = null
 material/1 = null
+
+[node name="lightpostSingle" parent="tmpParent" instance=ExtResource( 10 )]
+transform = Transform( 0.113824, 0, -0.164451, 0, 0.2, 0, 0.164451, 0, 0.113824, 0.01603, 0.199842, 0.141071 )
 
 [node name="CollisionShape" parent="." instance=ExtResource( 6 )]
 
