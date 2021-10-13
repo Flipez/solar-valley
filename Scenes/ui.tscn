@@ -575,6 +575,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ClockLabel" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -453.78
+margin_top = 41.9255
+margin_right = -346.78
+margin_bottom = 70.9255
+custom_fonts/font = SubResource( 3 )
+text = "3 o'clock"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="ButtonBackground/BuildSelection/PlantsButton" to="." method="_on_PlantsButton_pressed"]
 [connection signal="pressed" from="ButtonBackground/BuildSelection/HouseButton" to="." method="_on_HouseButton_pressed"]
 [connection signal="pressed" from="ButtonBackground/BuildSelection/SolarButtton" to="." method="_on_SolarButtton_pressed"]
