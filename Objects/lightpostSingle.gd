@@ -41,7 +41,7 @@ func disable_light():
 
 func _on_timer_timeout():
   if light.light_energy == normal_light_energy:
-    light.light_energy = rand_range(1, 2)
+    light.light_energy = rand_range(1.2, normal_light_energy)
     timer.wait_time = 0.1
   else:
     light.light_energy = normal_light_energy
