@@ -94,4 +94,5 @@ func buy_hexagon(hexagon, cost):
     hexagon.set_translation(translation)
     hexagon.set_rotation(rotation)
     get_parent().add_child(hexagon)
+    Audio.play_placement()
     queue_free()
