@@ -3,6 +3,7 @@ extends Control
 func _process(_delta):
   $MoneyLabel.text = "%04d" % Statistics.money
   $PeopleLabel.text = "%03d" % Statistics.people
+  $ClockLabel.text = "%d o'clock" % Statistics.clock
 
 func _on_PlantsButton_pressed():
   Statistics.selected_type = "plant"

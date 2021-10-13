@@ -58,6 +58,8 @@ func _process(delta):
   if rotation <= 0:
     directional_light.rotation_degrees.y = 360
     
+  Statistics.update_clock(directional_light.rotation_degrees.y)
+    
   if energy <= 1.5:
     if Statistics.night == false:
       Statistics.night = true
