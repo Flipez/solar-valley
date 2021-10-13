@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Objects/stone.material" type="Material" id=1]
 [ext_resource path="res://Objects/dirt.material" type="Material" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/Hexagons/house.gd" type="Script" id=8]
 [ext_resource path="res://Objects/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://Objects/lightpostSingle.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/Particles/Smoke/blackSmoke00.png" type="Texture" id=11]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "building_house"
@@ -146,15 +147,42 @@ surfaces/1 = {
 "vertex_count": 40
 }
 
-[sub_resource type="CylinderShape" id=6]
+[sub_resource type="SpatialMaterial" id=6]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 11 )
+
+[sub_resource type="Gradient" id=12]
+colors = PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=13]
+gradient = SubResource( 12 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+gravity = Vector3( 0, 0.1, 0 )
+initial_velocity = 0.1
+angle = 360.0
+angle_random = 1.0
+scale = 0.1
+color_ramp = SubResource( 13 )
+
+[sub_resource type="QuadMesh" id=8]
+
+[sub_resource type="CylinderShape" id=9]
 radius = 0.8
 height = 0.3
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=10]
 size = 10
 font_data = ExtResource( 9 )
 
-[sub_resource type="ViewportTexture" id=8]
+[sub_resource type="ViewportTexture" id=11]
 viewport_path = NodePath("Spatial/Viewport")
 
 [node name="building_house" type="Area"]
@@ -237,6 +265,14 @@ material/1 = null
 [node name="lightpostSingle" parent="tmpParent" instance=ExtResource( 10 )]
 transform = Transform( 0.113824, 0, -0.164451, 0, 0.2, 0, 0.164451, 0, 0.113824, 0.01603, 0.199842, 0.141071 )
 
+[node name="Smoke" type="Particles" parent="tmpParent"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0771957, 0.632311, -0.0145791 )
+material_override = SubResource( 6 )
+amount = 100
+lifetime = 2.0
+process_material = SubResource( 7 )
+draw_pass_1 = SubResource( 8 )
+
 [node name="CollisionShape" parent="." instance=ExtResource( 6 )]
 
 [node name="influence_range" type="Area" parent="." groups=[
@@ -246,7 +282,7 @@ collision_layer = 32
 collision_mask = 32
 
 [node name="CollisionShape" type="CollisionShape" parent="influence_range"]
-shape = SubResource( 6 )
+shape = SubResource( 9 )
 
 [node name="Spatial" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.853532, 0 )
@@ -258,14 +294,14 @@ transparent_bg = true
 [node name="Label" type="Label" parent="Spatial/Viewport"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 10 )
 align = 1
 valign = 1
 
 [node name="Sprite3D" type="Sprite3D" parent="Spatial"]
 flip_v = true
 billboard = 1
-texture = SubResource( 8 )
+texture = SubResource( 11 )
 
 [connection signal="mouse_entered" from="." to="." method="_on_building_house_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_building_house_mouse_exited"]
