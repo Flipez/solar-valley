@@ -2,7 +2,7 @@ extends Spatial
 
 onready var timer = Timer.new()
 onready var light = $OmniLight
-onready var lightpost = $RootNode/lightpostSingle
+onready var lightpost = $RootNode/lanternGlass
 
 var active = false
 var normal_light_energy = 1.5
@@ -10,7 +10,7 @@ var normal_light_energy = 1.5
 func _ready():
   randomize()
   
-  lightpost.mesh.surface_get_material(2).set_emission(Color(242, 235, 79))
+  lightpost.mesh.surface_get_material(1).set_emission(Color(242, 235, 79))
   
   timer.autostart = true
   timer.wait_time = 1
@@ -29,19 +29,19 @@ func enable_light():
   timer.start()
   active = true
   light.light_energy = normal_light_energy
-  lightpost.mesh.surface_get_material(2).set_feature(1, true)
+  lightpost.mesh.surface_get_material(1).set_feature(1, true)
 
 
 func disable_light():
   active = false
   timer.stop()
   light.light_energy = 0
-  lightpost.mesh.surface_get_material(2).set_feature(1, false)
+  lightpost.mesh.surface_get_material(1).set_feature(1, false)
 
 
 func _on_timer_timeout():
   if light.light_energy == normal_light_energy:
-    light.light_energy = rand_range(1, 2)
+    light.light_energy = rand_range(0.5, 2)
     timer.wait_time = 0.1
   else:
     light.light_energy = normal_light_energy

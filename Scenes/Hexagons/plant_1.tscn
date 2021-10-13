@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Objects/dirt.material" type="Material" id=1]
 [ext_resource path="res://Objects/wood.material" type="Material" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Objects/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Scenes/Hexagons/plant_1.gd" type="Script" id=11]
 [ext_resource path="res://Objects/decoration/grass.material" type="Material" id=12]
+[ext_resource path="res://Objects/lanternGlass.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ArrayMesh" id=1]
 surfaces/0 = {
@@ -242,6 +243,9 @@ transform = Transform( -0.952628, 0, -0.2, 0, 1, 0, 0.55, 0, -0.34641, 0.468663,
 mesh = SubResource( 5 )
 material/0 = null
 material/1 = null
+
+[node name="lanternGlass" parent="tmpParent" instance=ExtResource( 13 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0627527, 0.201781, -0.0802189 )
 
 [node name="CollisionShape" parent="." instance=ExtResource( 8 )]
 
