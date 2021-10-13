@@ -10,9 +10,11 @@ signal update_people
 onready var influence_range = $influence_range
 onready var label           = $Spatial
 onready var label_text      = $Spatial/Viewport/Label
+onready var smoke           = $tmpParent/building_house/Smoke
 
 
 func _ready():
+  smoke.rotation.y -= rotation.y
   update_people(1)
 
 

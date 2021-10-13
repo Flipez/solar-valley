@@ -35,7 +35,7 @@ func set_default_visibility():
   grass_mesh.visible   = true
 
 
-func _process(delta):
+func _process(_delta):
   if Input.is_action_just_pressed("ui_rotate") and is_hovered:
     rotate_y(PI/3)
 
@@ -80,7 +80,7 @@ func _input(event):
           buy_hexagon(plant_1_preload.instance(), cost_plant)
         "house":
           hex = house_preload.instance()
-          hex.connect("more_people", Statistics, "more_people")
+          hex.connect("update_people", Statistics, "update_people")
           buy_hexagon(hex, cost_house)
         "solar":
           buy_hexagon(solar_preload.instance(), cost_solar)
@@ -94,4 +94,5 @@ func buy_hexagon(hexagon, cost):
     hexagon.set_translation(translation)
     hexagon.set_rotation(rotation)
     get_parent().add_child(hexagon)
+    Audio.play_placement()
     queue_free()
