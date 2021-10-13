@@ -232,37 +232,37 @@ material/0 = null
 material/1 = SubResource( 13 )
 
 [node name="path_end" type="MeshInstance" parent="tmpParent/building_well"]
-transform = Transform( -8.9407e-08, 0, -0.4, 0, 1, 0, 1.1, 0, 0, 0.481772, 0.199991, -0.273628 )
+transform = Transform( -0.0205939, 0, -0.19997, 0, 4, 0, 1.17982, 0, -0.00349049, 0.490595, 0.101665, -0.29511 )
 mesh = SubResource( 8 )
 material/0 = null
 material/1 = null
 
 [node name="path_end2" type="MeshInstance" parent="tmpParent/building_well"]
-transform = Transform( 0.952628, 0, -0.2, 0, 1, 0, 0.55, 0, 0.346411, -0.00570491, 0.200004, -0.551958 )
+transform = Transform( 0.985742, 0, -0.103008, 0, 4, 0, 0.592294, 0, 0.171433, -0.011878, 0.101665, -0.573006 )
 mesh = SubResource( 8 )
 material/0 = null
 material/1 = null
 
 [node name="path_end3" type="MeshInstance" parent="tmpParent/building_well"]
-transform = Transform( 0.95263, 0, 0.2, 0, 1, 0, -0.550001, 0, 0.34641, -0.487089, 0.200366, -0.272084 )
+transform = Transform( 1.00581, 0, 0.0969619, 0, 4, 0, -0.557531, 0, 0.174924, -0.506948, 0.101665, -0.274827 )
 mesh = SubResource( 8 )
 material/0 = null
 material/1 = null
 
 [node name="path_end4" type="MeshInstance" parent="tmpParent/building_well"]
-transform = Transform( 2.98023e-08, 0, 0.4, 0, 1, 0, -1.1, 0, -5.96046e-08, -0.48683, 0.200592, 0.282301 )
+transform = Transform( -5.02681e-08, 0, 0.2, 0, 4, 0, -1.15, 0, -8.74228e-09, -0.490965, 0.101665, 0.295103 )
 mesh = SubResource( 8 )
 material/0 = null
 material/1 = null
 
 [node name="path_end5" type="MeshInstance" parent="tmpParent/building_well"]
-transform = Transform( -0.952628, 0, 0.2, 0, 1, 0, -0.55, 0, -0.346411, -0.0126709, 0.20061, 0.553291 )
+transform = Transform( -0.985742, 0, 0.103008, 0, 4, 0, -0.592294, 0, -0.171433, 0.00834036, 0.101665, 0.571957 )
 mesh = SubResource( 8 )
 material/0 = null
 material/1 = null
 
 [node name="path_end6" type="MeshInstance" parent="tmpParent/building_well"]
-transform = Transform( -0.952628, 0, -0.2, 0, 1, 0, 0.55, 0, -0.34641, 0.468663, 0.200353, 0.280845 )
+transform = Transform( -1.00581, 0, -0.0969619, 0, 4, 0, 0.557531, 0, -0.174924, 0.493102, 0.101665, 0.282299 )
 mesh = SubResource( 8 )
 material/0 = null
 material/1 = null
