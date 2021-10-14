@@ -1,9 +1,9 @@
 extends Area
 
-var surrounding_houses    = 0
-var surrounding_wells     = 0
-export var elapsed_ticks  = 0
-var number_plants         = float(0)
+var surrounding_houses          = 0
+var surrounding_wells           = 0
+export var elapsed_ticks : int  = 0
+var number_plants : float       = 0
 
 onready var influence_range = $influence_range
 onready var label           = $Spatial
@@ -50,3 +50,20 @@ func _on_Spatial_mouse_entered():
 
 func _on_Spatial_mouse_exited():
   $Spatial.visible = false
+
+func save():
+  return {
+    type = "plant",
+    transform = {
+      pos_x = self.translation.x,
+      pos_y = self.translation.y,
+      pos_z = self.translation.z,
+      rot_x = self.rotation.x,
+      rot_y = self.rotation.y,
+      rot_z = self.rotation.z,
+    },
+    elapsed_ticks = elapsed_ticks,
+    number_plants = number_plants,
+    surrounding_houses = surrounding_houses,
+    surrounding_wells = surrounding_wells
+  }

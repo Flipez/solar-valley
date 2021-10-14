@@ -1,9 +1,9 @@
 extends Area
 
-var surrounding_plants   = 1 # 1 avoids dividiing by zero in plant_1.gd
-var surrounding_solar    = 0
-export var elapsed_ticks = 0
-var people               = 0
+var surrounding_plants          = 1 # 1 avoids dividiing by zero in plant_1.gd
+var surrounding_solar           = 0
+export var elapsed_ticks : int  = 0
+var people                      = 0
 
 signal update_people
 
@@ -72,3 +72,20 @@ func _on_building_house_mouse_entered():
 
 func _on_building_house_mouse_exited():
   $Spatial.visible = false
+
+func save():
+  return {
+    type = "house",
+    transform = {
+      pos_x = self.translation.x,
+      pos_y = self.translation.y,
+      pos_z = self.translation.z,
+      rot_x = self.rotation.x,
+      rot_y = self.rotation.y,
+      rot_z = self.rotation.z,
+    },
+    elapsed_ticks = elapsed_ticks,
+    people = people,
+    surrounding_plants = surrounding_plants,
+    surrounding_solar = surrounding_solar
+  }

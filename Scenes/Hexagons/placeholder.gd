@@ -96,3 +96,16 @@ func buy_hexagon(hexagon, cost):
     get_parent().add_child(hexagon)
     Audio.play_placement()
     queue_free()
+
+func save():
+  return {
+    type = "placeholder",
+    transform = {
+      pos_x = self.translation.x,
+      pos_y = self.translation.y,
+      pos_z = self.translation.z,
+      rot_x = self.rotation.x,
+      rot_y = self.rotation.y,
+      rot_z = self.rotation.z,
+    },
+  }
