@@ -28,8 +28,9 @@ func houses():
       # increase house counter
       surrounding_houses += 1
       #decrease plant counter
-      if number_plants > 0:
-        number_plants -= body.get_parent().people / 30.0 / body.get_parent().surrounding_plants
+      var surrounding_plants = body.get_parent().surrounding_plants
+      if number_plants > 0 and surrounding_plants > 0:
+        number_plants -= body.get_parent().people / 30.0 / surrounding_plants
       else: 
         body.get_parent().update_people(-1)
 
@@ -42,7 +43,7 @@ func wells():
 
 
 func _on_Spatial_mouse_entered():
-  label_text.text = "plants: " + String(number_plants) + "\n" \
+  label_text.text = "plants: " + String(int(number_plants)) + "\n" \
                     + "surrounding houses: " + String(surrounding_houses) + "\n" \
                     + "surrounding wells: " + String(surrounding_wells) 
   $Spatial.visible = true
