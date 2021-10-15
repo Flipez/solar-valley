@@ -10,6 +10,7 @@ var plant_1_preload     = preload("res://Scenes/Hexagons/plant_1.tscn")
 var house_preload       = preload("res://Scenes/Hexagons/house.tscn")
 var solar_preload       = preload("res://Scenes/Hexagons/solar.tscn")
 var well_preload        = preload("res://Scenes/Hexagons/well.tscn")
+var pause_menu          = preload("res://Scenes/pause_menu.tscn")
 
 export var sun_speed = 1
 
@@ -114,6 +115,12 @@ func load_game():
 func _on_Timer_timeout():
   for hex in hexagons.get_children():
     hex.tick()
+
+
+func _unhandled_input(event):
+  if event is InputEventKey:
+    if event.pressed and event.scancode == KEY_ESCAPE:
+      add_child( pause_menu.instance() )
 
 
 func _process(delta):
