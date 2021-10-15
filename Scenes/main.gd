@@ -13,6 +13,7 @@ var well_preload        = preload("res://Scenes/Hexagons/well.tscn")
 var pause_menu          = preload("res://Scenes/pause_menu.tscn")
 
 export var sun_speed = 1
+export var max_sun_energy = 5
 
 func _ready():
   tick_timer.start()
@@ -116,23 +117,21 @@ func _on_Timer_timeout():
   for hex in hexagons.get_children():
     hex.tick()
 
-
 func _unhandled_input(event):
   if event is InputEventKey:
     if event.pressed and event.scancode == KEY_ESCAPE:
       add_child( pause_menu.instance() )
 
-
 func _process(delta):
   var rotation = directional_light.rotation_degrees.y
-  var energy = 5
+  var energy = max_sun_energy
   directional_light.rotation_degrees.y -= sun_speed * delta
   
   if rotation <= 120:
     energy = max((rotation - 50) * 0.07, 0)
   elif rotation >= 290:
     var off = 360 - rotation
-    energy = min((off) * 0.07, 5)
+    energy = min((off) * 0.07, max_sun_energy)
   
   directional_light.light_energy = energy
   if rotation <= 0:

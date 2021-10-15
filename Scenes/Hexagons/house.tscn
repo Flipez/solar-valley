@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Objects/stone.material" type="Material" id=1]
 [ext_resource path="res://Objects/dirt.material" type="Material" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/Hexagons/house.gd" type="Script" id=8]
 [ext_resource path="res://Objects/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://Objects/lightpostSingle.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/Particles/Smoke/blackSmoke00.png" type="Texture" id=11]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "building_house"
@@ -38,15 +39,32 @@ surfaces/1 = {
 "vertex_count": 48
 }
 
-[sub_resource type="GradientTexture" id=6]
+[sub_resource type="SpatialMaterial" id=7]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 11 )
 
-[sub_resource type="ParticlesMaterial" id=7]
+[sub_resource type="Gradient" id=8]
+colors = PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=16]
+gradient = SubResource( 8 )
+
+[sub_resource type="ParticlesMaterial" id=10]
 gravity = Vector3( 0, 0.1, 0 )
 initial_velocity = 0.1
 angle = 360.0
 angle_random = 1.0
 scale = 0.1
-color_ramp = SubResource( 6 )
+color_ramp = SubResource( 16 )
+
+[sub_resource type="QuadMesh" id=11]
 
 [sub_resource type="ArrayMesh" id=2]
 resource_name = "building"
@@ -129,7 +147,7 @@ surfaces/1 = {
 "vertex_count": 72
 }
 
-[sub_resource type="ArrayMesh" id=8]
+[sub_resource type="ArrayMesh" id=15]
 surfaces/0 = {
 "aabb": AABB( -0.04, 0, -0.1395, 0.54, 0.025, 0.335 ),
 "array_data": PoolByteArray( 0, 0, 192, 62, 0, 0, 0, 0, 22, 217, 14, 190, 0, 79, 157, 0, 129, 0, 0, 127, 97, 203, 110, 68, 0, 0, 0, 63, 0, 0, 0, 0, 22, 217, 14, 190, 0, 79, 157, 0, 130, 0, 0, 127, 235, 204, 110, 68, 2, 34, 193, 62, 205, 204, 204, 60, 106, 188, 244, 189, 0, 79, 157, 0, 129, 0, 0, 127, 108, 203, 87, 66, 0, 0, 0, 63, 205, 204, 204, 60, 106, 188, 244, 189, 0, 79, 157, 0, 129, 0, 0, 127, 235, 204, 87, 66, 0, 0, 0, 63, 0, 0, 0, 0, 22, 217, 14, 62, 0, 79, 99, 0, 127, 0, 0, 127, 235, 76, 110, 68, 0, 0, 192, 62, 0, 0, 0, 0, 22, 217, 14, 62, 0, 79, 99, 0, 127, 0, 0, 127, 97, 75, 110, 68, 0, 0, 0, 63, 205, 204, 204, 60, 106, 188, 244, 61, 0, 79, 99, 0, 127, 0, 0, 127, 235, 76, 87, 66, 254, 221, 190, 62, 205, 204, 204, 60, 106, 188, 244, 61, 0, 79, 99, 0, 127, 0, 0, 127, 86, 75, 87, 66, 0, 0, 0, 62, 0, 0, 0, 0, 12, 2, 171, 189, 235, 79, 160, 0, 133, 0, 27, 127, 133, 197, 169, 64, 0, 0, 192, 62, 0, 0, 0, 0, 22, 217, 14, 190, 235, 79, 160, 0, 133, 0, 27, 127, 205, 203, 169, 64, 4, 68, 2, 62, 205, 204, 204, 60, 74, 12, 130, 189, 235, 79, 160, 0, 133, 0, 27, 127, 111, 197, 73, 60, 2, 34, 193, 62, 205, 204, 204, 60, 106, 188, 244, 189, 235, 79, 160, 0, 133, 0, 27, 127, 194, 203, 73, 60, 0, 0, 192, 62, 0, 0, 0, 0, 22, 217, 14, 62, 21, 79, 96, 0, 123, 0, 229, 127, 154, 74, 93, 70, 0, 0, 0, 62, 0, 0, 0, 0, 39, 49, 72, 62, 21, 79, 96, 0, 123, 0, 229, 127, 61, 66, 93, 70, 254, 221, 190, 62, 205, 204, 204, 60, 106, 188, 244, 61, 21, 79, 96, 0, 123, 0, 229, 127, 165, 74, 26, 69, 248, 119, 251, 61, 205, 204, 204, 60, 69, 182, 51, 62, 21, 79, 96, 0, 123, 0, 229, 127, 105, 66, 26, 69, 0, 0, 0, 62, 0, 0, 0, 0, 12, 2, 171, 189, 0, 79, 157, 0, 129, 0, 0, 127, 235, 196, 27, 66, 4, 68, 2, 62, 205, 204, 204, 60, 74, 12, 130, 189, 0, 79, 157, 0, 129, 0, 0, 127, 2, 197, 44, 63, 10, 215, 35, 189, 96, 62, 48, 35, 12, 2, 171, 189, 0, 79, 157, 0, 129, 0, 0, 127, 76, 62, 27, 66, 249, 160, 51, 41, 205, 204, 204, 60, 74, 12, 130, 189, 0, 79, 157, 0, 129, 0, 0, 127, 0, 0, 44, 63, 10, 215, 35, 189, 96, 62, 48, 35, 12, 2, 171, 189, 189, 107, 0, 0, 0, 0, 126, 127, 147, 194, 171, 64, 249, 160, 51, 41, 205, 204, 204, 60, 74, 12, 130, 189, 189, 107, 0, 0, 0, 0, 126, 127, 0, 193, 167, 55, 10, 215, 35, 189, 96, 62, 48, 35, 39, 49, 72, 62, 189, 107, 0, 0, 0, 0, 127, 127, 178, 71, 171, 64, 160, 248, 175, 41, 205, 204, 204, 60, 69, 182, 51, 62, 189, 107, 0, 0, 0, 0, 126, 127, 232, 70, 167, 55, 0, 0, 0, 62, 0, 0, 0, 0, 39, 49, 72, 62, 0, 79, 99, 0, 127, 0, 0, 127, 235, 68, 206, 69, 10, 215, 35, 189, 96, 62, 48, 35, 39, 49, 72, 62, 0, 79, 99, 0, 127, 0, 0, 127, 76, 190, 206, 69, 248, 119, 251, 61, 205, 204, 204, 60, 69, 182, 51, 62, 0, 79, 99, 0, 126, 0, 0, 127, 213, 68, 140, 68, 160, 248, 175, 41, 205, 204, 204, 60, 69, 182, 51, 62, 0, 79, 99, 0, 127, 0, 0, 127, 0, 0, 140, 68, 0, 0, 0, 63, 0, 0, 0, 0, 22, 217, 14, 62, 127, 0, 0, 0, 0, 0, 0, 127, 125, 197, 0, 60, 0, 0, 0, 63, 205, 204, 204, 60, 106, 188, 244, 61, 127, 0, 0, 0, 0, 0, 0, 127, 180, 196, 8, 36, 0, 0, 0, 63, 0, 0, 0, 0, 22, 217, 14, 190, 127, 0, 0, 0, 0, 0, 0, 127, 125, 69, 0, 60, 0, 0, 0, 63, 205, 204, 204, 60, 106, 188, 244, 189, 127, 0, 0, 0, 0, 0, 0, 127, 180, 68, 8, 36, 249, 160, 51, 41, 205, 204, 204, 60, 74, 12, 130, 189, 0, 127, 0, 0, 0, 0, 0, 127, 0, 0, 0, 190, 4, 68, 2, 62, 205, 204, 204, 60, 74, 12, 130, 189, 0, 127, 0, 0, 0, 0, 0, 127, 2, 69, 0, 190, 160, 248, 175, 41, 205, 204, 204, 60, 69, 182, 51, 62, 0, 127, 0, 0, 0, 0, 0, 127, 0, 0, 232, 71, 248, 119, 251, 61, 205, 204, 204, 60, 69, 182, 51, 62, 0, 127, 0, 0, 0, 0, 0, 127, 213, 68, 232, 71, 254, 221, 190, 62, 205, 204, 204, 60, 106, 188, 244, 61, 0, 127, 0, 0, 0, 0, 0, 127, 86, 75, 180, 69, 2, 34, 193, 62, 205, 204, 204, 60, 106, 188, 244, 189, 0, 127, 0, 0, 0, 0, 0, 127, 108, 75, 104, 195, 0, 0, 0, 63, 205, 204, 204, 60, 106, 188, 244, 61, 0, 127, 0, 0, 0, 0, 0, 127, 235, 76, 180, 69, 0, 0, 0, 63, 205, 204, 204, 60, 106, 188, 244, 189, 0, 127, 0, 0, 0, 0, 0, 127, 235, 76, 104, 195 ),
@@ -155,11 +173,15 @@ surfaces/1 = {
 "vertex_count": 40
 }
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="CylinderShape" id=12]
+radius = 0.8
+height = 0.3
+
+[sub_resource type="DynamicFont" id=13]
 size = 10
 font_data = ExtResource( 9 )
 
-[sub_resource type="ViewportTexture" id=10]
+[sub_resource type="ViewportTexture" id=14]
 viewport_path = NodePath("Spatial/Viewport")
 
 [node name="building_house" type="Area"]
@@ -178,6 +200,8 @@ transform = Transform( -0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, -0.5, -0.057644
 material_override = SubResource( 7 )
 amount = 100
 lifetime = 2.0
+process_material = SubResource( 10 )
+draw_pass_1 = SubResource( 11 )
 
 [node name="lightpostSingle" parent="tmpParent/building_house" instance=ExtResource( 10 )]
 transform = Transform( 0.0855067, 0, 0.1808, 0, 0.2, 0, -0.1808, 0, 0.0855067, 0.114156, 0.199842, -0.084418 )
@@ -214,37 +238,37 @@ material/1 = null
 
 [node name="path_end" type="MeshInstance" parent="tmpParent/building_house"]
 transform = Transform( -0.0205939, 0, -0.19997, 0, 4, 0, 1.17982, 0, -0.00349049, 0.490595, 0.101665, -0.29511 )
-mesh = SubResource( 8 )
+mesh = SubResource( 15 )
 material/0 = null
 material/1 = null
 
 [node name="path_end2" type="MeshInstance" parent="tmpParent/building_house"]
 transform = Transform( 0.985742, 0, -0.103008, 0, 4, 0, 0.592294, 0, 0.171433, -0.011878, 0.101665, -0.573006 )
-mesh = SubResource( 8 )
+mesh = SubResource( 15 )
 material/0 = null
 material/1 = null
 
 [node name="path_end3" type="MeshInstance" parent="tmpParent/building_house"]
 transform = Transform( 1.00581, 0, 0.0969619, 0, 4, 0, -0.557531, 0, 0.174924, -0.506948, 0.101665, -0.274827 )
-mesh = SubResource( 8 )
+mesh = SubResource( 15 )
 material/0 = null
 material/1 = null
 
 [node name="path_end4" type="MeshInstance" parent="tmpParent/building_house"]
 transform = Transform( -5.02681e-08, 0, 0.2, 0, 4, 0, -1.15, 0, -8.74228e-09, -0.490965, 0.101665, 0.295103 )
-mesh = SubResource( 8 )
+mesh = SubResource( 15 )
 material/0 = null
 material/1 = null
 
 [node name="path_end5" type="MeshInstance" parent="tmpParent/building_house"]
 transform = Transform( -0.985742, 0, 0.103008, 0, 4, 0, -0.592294, 0, -0.171433, 0.00834036, 0.101665, 0.571957 )
-mesh = SubResource( 8 )
+mesh = SubResource( 15 )
 material/0 = null
 material/1 = null
 
 [node name="path_end6" type="MeshInstance" parent="tmpParent/building_house"]
 transform = Transform( -1.00581, 0, -0.0969619, 0, 4, 0, 0.557531, 0, -0.174924, 0.493102, 0.101665, 0.282299 )
-mesh = SubResource( 8 )
+mesh = SubResource( 15 )
 material/0 = null
 material/1 = null
 
@@ -257,6 +281,7 @@ collision_layer = 32
 collision_mask = 32
 
 [node name="CollisionShape" type="CollisionShape" parent="influence_range"]
+shape = SubResource( 12 )
 
 [node name="Spatial" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.853532, 0 )
@@ -268,14 +293,14 @@ transparent_bg = true
 [node name="Label" type="Label" parent="Spatial/Viewport"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 13 )
 align = 1
 valign = 1
 
 [node name="Sprite3D" type="Sprite3D" parent="Spatial"]
 flip_v = true
 billboard = 1
-texture = SubResource( 10 )
+texture = SubResource( 14 )
 
 [connection signal="mouse_entered" from="." to="." method="_on_building_house_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_building_house_mouse_exited"]
