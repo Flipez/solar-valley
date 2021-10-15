@@ -14,8 +14,14 @@ var well_preload        = preload("res://Scenes/Hexagons/well.tscn")
 export var sun_speed = 1
 
 func _ready():
-  directional_light.rotation_degrees.y = 360
   tick_timer.start()
+  if Statistics.new_game:
+    create_new_game()
+  else:
+    load_game()
+  
+func create_new_game():
+  directional_light.rotation_degrees.y = 360
 
   for i in range( -10,10):
     for j in range (-6,6):
@@ -85,7 +91,7 @@ func load_object(data):
     "plant":
       return plant_1_preload.instance()
 
-func load_data():
+func load_game():
   for hex in hexagons.get_children():
     hex.queue_free()
 

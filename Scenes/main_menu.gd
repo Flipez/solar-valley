@@ -20,11 +20,13 @@ func _process(delta):
 
 
 func _on_new_pressed():
-    get_tree().change_scene("res://Scenes/main.tscn")
+  Statistics.new_game = true
+  get_tree().change_scene("res://Scenes/main.tscn")
 
 
 func _on_load_game_pressed():
-  pass # Replace with function body.
+  Statistics.new_game = false
+  get_tree().change_scene("res://Scenes/main.tscn")
 
 
 func _on_tutorial_pressed():
