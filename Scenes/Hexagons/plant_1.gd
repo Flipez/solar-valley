@@ -15,7 +15,7 @@ func _ready():
 
 func tick():
   elapsed_ticks +=1
-  houses()
+  #houses()
   wells()
   if (elapsed_ticks % 10 == 0) && number_plants < 10:
     number_plants += 1.0
@@ -29,8 +29,9 @@ func houses():
       surrounding_houses += 1
       #decrease plant counter
       var surrounding_plants = body.get_parent().surrounding_plants
-      if number_plants > 0 and surrounding_plants > 0:
-        number_plants -= body.get_parent().people / 30.0 / surrounding_plants
+      if number_plants > 0:
+        if surrounding_plants > 0:
+          number_plants -= body.get_parent().people / 30.0 / surrounding_plants
       else: 
         body.get_parent().update_people(-1)
 

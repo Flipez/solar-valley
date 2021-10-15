@@ -1,6 +1,5 @@
 extends Area
 
-var surrounding_plants   = 1 # 1 avoids dividiing by zero in plant_1.gd
 var surrounding_solar    = 0
 export var elapsed_ticks = 0
 var people               = 0
@@ -18,11 +17,22 @@ func _ready():
   update_people(1)
 
 
-func plants():
-  surrounding_plants = 0
+func hex_plants():
+  var surrounding_hex_plants = 0
   for body in influence_range.get_overlapping_areas():
     if body.is_in_group("plant"):
-      surrounding_plants += 1
+      surrounding_hex_plants += 1
+
+  return surrounding_hex_plants
+  
+func eat_plants():
+  var plants = 0
+  for body in influence_range.get_overlapping_areas():
+    if body.is_in_group("plant"):
+      if (people / hex_plants()) > body.number_plants:
+        body.number_plants - (people / hex_plants())
+      else:
+        update_people(-1)
 
 
 func solar():
@@ -36,8 +46,7 @@ func tick():
   ## increase people
   elapsed_ticks +=1
   var n = 4
-  plants()
-  if (surrounding_plants > 0):
+  if (hex_plants() > 0):
     n += 3
   solar()
   if (surrounding_solar > 0):
@@ -47,6 +56,8 @@ func tick():
     print("plant_1.gd: n is > 10")
   if (elapsed_ticks % 10 == 0) && people < n:
     update_people(+1)
+    
+  eat_plants()
 
 
 func update_people(amount):
@@ -60,13 +71,12 @@ func update_people(amount):
     people += amount
     emit_signal("update_people", amount)
 
+func set_hover_text():
+  label_text.text = "inhabitants: " + String(people) + "/10\n" \
+                    + "surrounding plants: " + String(hex_plants()) + "\n" \
+                    + "enough energy: " + String(surrounding_solar)
 
 func _on_building_house_mouse_entered():
-  plants()
-  solar()
-  label_text.text = "inhabitants: " + String(people) + "/10\n" \
-                    + "surrounding plants: " + String(surrounding_plants) + "\n" \
-                    + "enough energy: " + String(surrounding_solar)
   $Spatial.visible = true
 
 
