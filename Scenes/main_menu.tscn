@@ -77,11 +77,11 @@ margin_left = 69.0
 margin_right = 259.0
 margin_bottom = 241.0
 
-[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+[node name="New" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_right = 190.0
 margin_bottom = 45.0
 
-[node name="new" type="TextureButton" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer"]
+[node name="new" type="TextureButton" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/New"]
 modulate = Color( 0.564706, 0.564706, 0.564706, 1 )
 margin_right = 190.0
 margin_bottom = 45.0
@@ -89,7 +89,7 @@ texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 5 )
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer"]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/New"]
 margin_left = 41.0
 margin_top = 10.0
 margin_right = 149.0
@@ -97,12 +97,12 @@ margin_bottom = 35.0
 custom_fonts/font = SubResource( 2 )
 text = "new game"
 
-[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+[node name="Load" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 49.0
 margin_right = 190.0
 margin_bottom = 94.0
 
-[node name="load" type="TextureButton" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2"]
+[node name="load" type="TextureButton" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Load"]
 modulate = Color( 0.564706, 0.564706, 0.564706, 1 )
 margin_right = 190.0
 margin_bottom = 45.0
@@ -110,7 +110,7 @@ texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 5 )
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2"]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Load"]
 margin_left = 41.0
 margin_top = 10.0
 margin_right = 149.0
@@ -118,12 +118,12 @@ margin_bottom = 35.0
 custom_fonts/font = SubResource( 3 )
 text = "load game"
 
-[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+[node name="Tutorial" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 98.0
 margin_right = 190.0
 margin_bottom = 143.0
 
-[node name="tutorial" type="TextureButton" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3"]
+[node name="tutorial" type="TextureButton" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Tutorial"]
 modulate = Color( 0.564706, 0.564706, 0.564706, 1 )
 margin_right = 190.0
 margin_bottom = 45.0
@@ -131,7 +131,7 @@ texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 5 )
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3"]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Tutorial"]
 margin_left = 58.0
 margin_top = 10.0
 margin_right = 131.0
@@ -139,12 +139,12 @@ margin_bottom = 35.0
 custom_fonts/font = SubResource( 4 )
 text = "tutorial"
 
-[node name="CenterContainer4" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+[node name="Control" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 147.0
 margin_right = 190.0
 margin_bottom = 192.0
 
-[node name="controls" type="TextureButton" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4"]
+[node name="controls" type="TextureButton" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Control"]
 modulate = Color( 0.564706, 0.564706, 0.564706, 1 )
 margin_right = 190.0
 margin_bottom = 45.0
@@ -152,7 +152,7 @@ texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 5 )
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4"]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Control"]
 margin_left = 53.0
 margin_top = 10.0
 margin_right = 137.0
@@ -160,12 +160,12 @@ margin_bottom = 35.0
 custom_fonts/font = SubResource( 5 )
 text = "controls"
 
-[node name="CenterContainer5" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+[node name="Exit" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 196.0
 margin_right = 190.0
 margin_bottom = 241.0
 
-[node name="exit" type="TextureButton" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5"]
+[node name="exit" type="TextureButton" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Exit"]
 modulate = Color( 0.564706, 0.564706, 0.564706, 1 )
 margin_right = 190.0
 margin_bottom = 45.0
@@ -173,7 +173,7 @@ texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 5 )
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5"]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Exit"]
 margin_left = 76.0
 margin_top = 10.0
 margin_right = 114.0
@@ -181,8 +181,8 @@ margin_bottom = 35.0
 custom_fonts/font = SubResource( 6 )
 text = "exit"
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/new" to="." method="_on_new_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/load" to="." method="_on_load_game_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/tutorial" to="." method="_on_tutorial_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/controls" to="." method="_on_controls_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/New/new" to="." method="_on_new_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Load/load" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Tutorial/tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Control/controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Exit/exit" to="." method="_on_exit_pressed"]
