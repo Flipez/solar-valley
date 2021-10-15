@@ -7,8 +7,16 @@
 [ext_resource path="res://Objects/red_button01.png" type="Texture" id=5]
 [ext_resource path="res://Objects/red_button00.png" type="Texture" id=6]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=4]
@@ -20,14 +28,6 @@ size = 20
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 20
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=7]
-size = 20
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=8]
 size = 20
 font_data = ExtResource( 1 )
 
@@ -64,7 +64,7 @@ margin_bottom = 73.0
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer"]
 margin_right = 329.0
 margin_bottom = 73.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 text = "SolarPunk"
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
@@ -94,7 +94,7 @@ margin_left = 41.0
 margin_top = 10.0
 margin_right = 149.0
 margin_bottom = 35.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 text = "new game"
 
 [node name="Load" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
@@ -115,7 +115,7 @@ margin_left = 41.0
 margin_top = 10.0
 margin_right = 149.0
 margin_bottom = 35.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 text = "load game"
 
 [node name="Tutorial" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
@@ -136,7 +136,7 @@ margin_left = 58.0
 margin_top = 10.0
 margin_right = 131.0
 margin_bottom = 35.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
 text = "tutorial"
 
 [node name="Control" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
@@ -157,7 +157,7 @@ margin_left = 53.0
 margin_top = 10.0
 margin_right = 137.0
 margin_bottom = 35.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 5 )
 text = "controls"
 
 [node name="Exit" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
@@ -178,7 +178,7 @@ margin_left = 76.0
 margin_top = 10.0
 margin_right = 114.0
 margin_bottom = 35.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 6 )
 text = "exit"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/New/new" to="." method="_on_new_pressed"]
