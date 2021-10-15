@@ -6,7 +6,8 @@
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 2 )
-sun_speed = 5
+sun_speed = 20
+max_sun_energy = 3
 
 [node name="hexagons" type="Node" parent="."]
 
@@ -24,8 +25,8 @@ moveSpeed = 0.02
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.782188, -0.426612, -0.454075, 0.607507, 0.360496, 0.707798, -0.138262, -0.829485, 0.541146, 0.934862, 4.47286, 3.36401 )
 light_color = Color( 0.941176, 0.901961, 0.819608, 1 )
-light_energy = 6.0
 shadow_enabled = true
+shadow_color = Color( 0.337255, 0.337255, 0.337255, 1 )
 shadow_contact = 0.5
 directional_shadow_split_3 = 0.124
 
