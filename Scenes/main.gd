@@ -48,7 +48,9 @@ func save():
   
   var main_data = {
     people = Statistics.people,
-    money = Statistics.money
+    money = Statistics.money,
+    light_rotation = directional_light.rotation_degrees.y,
+    light_energy = directional_light.light_energy
   }
   save_game.store_line(to_json(main_data))
   
@@ -99,6 +101,8 @@ func load_data():
 
   Statistics.people = main_data["people"]
   Statistics.money = main_data["money"]
+  directional_light.rotation_degrees.y = main_data["light_rotation"]
+  directional_light.light_energy = main_data["light_energy"]
 
 
 func _on_Timer_timeout():
