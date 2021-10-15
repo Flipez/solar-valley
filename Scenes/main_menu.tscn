@@ -3,9 +3,9 @@
 [ext_resource path="res://Objects/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/menu_background.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/main_menu.gd" type="Script" id=3]
-[ext_resource path="res://Objects/red_button02.png" type="Texture" id=4]
-[ext_resource path="res://Objects/red_button01.png" type="Texture" id=5]
-[ext_resource path="res://Objects/red_button00.png" type="Texture" id=6]
+[ext_resource path="res://Objects/UI/red_button02.png" type="Texture" id=4]
+[ext_resource path="res://Objects/UI/red_button01.png" type="Texture" id=5]
+[ext_resource path="res://Objects/UI/red_button00.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60

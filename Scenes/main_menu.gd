@@ -20,7 +20,7 @@ func _process(delta):
 
 
 func _on_new_pressed():
-    get_tree().change_scene("res://Scenes/menu_control.tscn")
+    get_tree().change_scene("res://Scenes/main.tscn")
 
 
 func _on_load_game_pressed():
@@ -28,7 +28,7 @@ func _on_load_game_pressed():
 
 
 func _on_tutorial_pressed():
-  pass # Replace with function body.
+  get_tree().change_scene("res://Scenes/menu_tutorial.tscn")
 
 
 func _on_controls_pressed():
