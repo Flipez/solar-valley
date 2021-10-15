@@ -63,7 +63,5 @@ func save():
       rot_z = self.rotation.z,
     },
     elapsed_ticks = elapsed_ticks,
-    number_plants = number_plants,
-    surrounding_houses = surrounding_houses,
-    surrounding_wells = surrounding_wells
+    number_plants = number_plants
   }

@@ -41,6 +41,5 @@ func save():
       rot_x = self.rotation.x,
       rot_y = self.rotation.y,
       rot_z = self.rotation.z,
-    },
-    surrounding_houses = surrounding_houses
+    }
   }

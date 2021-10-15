@@ -85,7 +85,5 @@ func save():
       rot_z = self.rotation.z,
     },
     elapsed_ticks = elapsed_ticks,
-    people = people,
-    surrounding_plants = surrounding_plants,
-    surrounding_solar = surrounding_solar
+    people = people
   }

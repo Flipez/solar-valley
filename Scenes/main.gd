@@ -57,10 +57,31 @@ func save():
 
   save_game.close()
 
-func load_transform(object, transformData):
-  object.set_translation(Vector3(transformData["pos_x"],transformData["pos_y"],transformData["pos_z"]))
-  object.set_rotation(Vector3(transformData["rot_x"],transformData["rot_y"],transformData["rot_z"]))
+func set_object_data(object, data):
+  var transform = data["transform"]
+  object.set_translation(Vector3(transform["pos_x"],transform["pos_y"],transform["pos_z"]))
+  object.set_rotation(Vector3(transform["rot_x"],transform["rot_y"],transform["rot_z"]))
+  for key in data.keys():
+      if key == "type" or key == "transform":
+        continue
+      object.set(key, data[key])
 
+func load_object(data):
+  match data["type"]:
+    "placeholder":
+      return placeholder_preload.instance()
+    "mountain":
+      return mountain_preload.instance()
+    "house":
+      var house = house_preload.instance()
+      house.connect("update_people", Statistics, "update_people")
+      return house
+    "well":
+      return well_preload.instance()
+    "solar":
+      return solar_preload.instance()
+    "plant":
+      return plant_1_preload.instance()
 
 func load_data():
   for hex in hexagons.get_children():
@@ -72,28 +93,9 @@ func load_data():
   
   while save_game.get_position() < save_game.get_len():
     var data = parse_json(save_game.get_line())
-    var new_object
-    match data["type"]:
-      "placeholder":
-        new_object = placeholder_preload.instance()
-      "mountain":
-        new_object = mountain_preload.instance()
-      "house":
-        new_object = house_preload.instance()
-        new_object.connect("more_people", Statistics, "more_people")
-      "well":
-        new_object = well_preload.instance()
-      "solar":
-        new_object = solar_preload.instance()
-      "plant":
-        new_object = plant_1_preload.instance()
-        
-    load_transform(new_object, data["transform"])
-    for key in data.keys():
-      if key == "type" or key == "transform":
-        continue
-      new_object.set(key, data[key])
+    var new_object = load_object(data)
     hexagons.add_child(new_object)
+    set_object_data(new_object, data)
 
   Statistics.people = main_data["people"]
   Statistics.money = main_data["money"]
