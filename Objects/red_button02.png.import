@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blue_button13.png-fc18b4be2d4e19348f650de394d13a54.stex"
+path="res://.import/red_button02.png-442a0552944cb4449a8c25cac4db6861.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/UI/blue_button13.png"
-dest_files=[ "res://.import/blue_button13.png-fc18b4be2d4e19348f650de394d13a54.stex" ]
+source_file="res://Objects/red_button02.png"
+dest_files=[ "res://.import/red_button02.png-442a0552944cb4449a8c25cac4db6861.stex" ]
 
 [params]
 
