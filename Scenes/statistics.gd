@@ -12,10 +12,13 @@ func _ready():
   money     = 20000 # change to 200 before submitting game
   people    = 0
 
+
 func update_clock(degree):
-  degree = 360 - degree
-  var hours = ((1440 / 360) * degree) / 60
-  clock = hours
+  # the circle has 360 degrees
+  # the day has 24 hours
+  # --> one hour is 15 degrees
+  clock = fposmod((degree-150), 360) / 15
+
 
 func _process(delta):
   money += people * delta

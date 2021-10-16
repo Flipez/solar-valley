@@ -18,8 +18,5 @@ func tick():
   pass
 
 
-
-
-
 func _on_AnimationPlayer_animation_finished(anim_name):
   ghost.visible = false
