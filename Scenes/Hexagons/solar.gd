@@ -1,14 +1,8 @@
 extends Area
 
-var surrounding_houses = 0
-
 onready var influence_range = $influence_range
-onready var label           = $Spatial
-onready var label_text      = $Spatial/Viewport/Label
 
-
-func _ready():
-  $Spatial.visible = false
+var hovered = false
 
 
 func tick():
@@ -16,18 +10,26 @@ func tick():
 
 
 func houses():
-  surrounding_houses = 0
+  var surrounding_houses = 0
   for body in influence_range.get_overlapping_areas():
     if body.is_in_group("house"):
       surrounding_houses += 1
+  return surrounding_houses
+
+
+func set_hover_text():
+  Statistics.description_height = 100
+  Statistics.description_text = \
+    "Basic Solar Farm \n\n" \
+    + "Serves " + String(houses()) + " houses"
 
 
 func _on_Spatial_mouse_entered():
-  houses()
-  label_text.text = "surrounding houses: " + String(surrounding_houses)
-  $Spatial.visible = true
+  set_hover_text()
+  Statistics.show_desciption = true
+  hovered = true
 
 
 func _on_Spatial_mouse_exited():
-  $Spatial.visible = false
-
+  Statistics.show_desciption = false
+  hovered = false

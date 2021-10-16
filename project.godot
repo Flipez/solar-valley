@@ -19,6 +19,10 @@ config/icon="res://icon.png"
 Statistics="*res://Scenes/statistics.gd"
 Audio="*res://Scenes/Audio.tscn"
 
+[display]
+
+mouse_cursor/custom_image="res://Objects/UI/cursor_pointer3D.png"
+
 [input]
 
 ui_turn_camera={

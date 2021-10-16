@@ -1,13 +1,11 @@
 extends Area
 
-var surrounding_houses    = 0
-var surrounding_wells     = 0
 export var elapsed_ticks  = 0
-var number_plants         = float(0)
+export var base_plant_output = 7
 
 onready var influence_range = $influence_range
-onready var label           = $Spatial
-onready var label_text      = $Spatial/Viewport/Label
+
+var hovered = false
 
 func _ready():
   pass
@@ -15,38 +13,57 @@ func _ready():
 
 func tick():
   elapsed_ticks +=1
-  houses()
-  wells()
-  if (elapsed_ticks % 10 == 0) && number_plants < 10:
-    number_plants += 1.0
+  if hovered:
+    set_hover_text()
 
+func plant_output():
+  if wells() > 0:
+    return base_plant_output * 2
+  return base_plant_output
 
 func houses():
-  surrounding_houses = 0
+  var surrounding_houses = 0
   for body in influence_range.get_overlapping_areas():
     if body.is_in_group("house"):
-      # increase house counter
       surrounding_houses += 1
-      #decrease plant counter
-      if number_plants > 0:
-        number_plants -= body.get_parent().people / 30.0 / body.get_parent().surrounding_plants
-      else: 
-        body.get_parent().update_people(-1)
+  return surrounding_houses
 
 
 func wells():
-  surrounding_wells = 0
+  var surrounding_wells = 0
   for body in influence_range.get_overlapping_areas():
     if body.is_in_group("well"):
       surrounding_wells += 1
+  return surrounding_wells
+  
+func well_text():
+  if wells() > 0:
+    return "Has water from well"
+  else:
+    return "Has no water from well"
+
+
+func available_plants():
+  if houses() == 0:
+    return plant_output()
+  return plant_output() / houses()
+
+
+func set_hover_text():
+  Statistics.description_height = 155
+  Statistics.description_text = \
+    "Basic Field: \n\n" \
+    + "Produces " + String(int(plant_output())) + " plants/s\n" \
+    + "Serves:    " + String(houses()) + " house(s)\n" \
+    + well_text()
 
 
 func _on_Spatial_mouse_entered():
-  label_text.text = "plants: " + String(number_plants) + "\n" \
-                    + "surrounding houses: " + String(surrounding_houses) + "\n" \
-                    + "surrounding wells: " + String(surrounding_wells) 
-  $Spatial.visible = true
+  set_hover_text()
+  Statistics.show_desciption = true
+  hovered = true
 
 
 func _on_Spatial_mouse_exited():
-  $Spatial.visible = false
+  Statistics.show_desciption = false
+  hovered = false
