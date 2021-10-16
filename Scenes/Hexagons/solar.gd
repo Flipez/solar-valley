@@ -1,12 +1,8 @@
 extends Area
 
 onready var influence_range = $influence_range
-onready var label           = $Spatial
-onready var label_text      = $Spatial/Viewport/Label
 
-
-func _ready():
-  label.visible = false
+var hovered = false
 
 
 func tick():
@@ -22,14 +18,18 @@ func houses():
 
 
 func set_hover_text():
-  label_text.text = "surrounding houses: " + String(houses())
+  Statistics.description_height = 100
+  Statistics.description_text = \
+    "Basic Solar Farm \n\n" \
+    + "Serves " + String(houses()) + " houses"
 
 
 func _on_Spatial_mouse_entered():
   set_hover_text()
-  label.visible = true
+  Statistics.show_desciption = true
+  hovered = true
 
 
 func _on_Spatial_mouse_exited():
-  label.visible = false
-
+  Statistics.show_desciption = false
+  hovered = false

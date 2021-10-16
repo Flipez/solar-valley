@@ -1,9 +1,16 @@
 extends Control
 
+
 func _process(_delta):
-  $MoneyLabel.text = "%04d" % Statistics.money
+  $MoneyLabel.text = "%05d" % Statistics.money
   $PeopleLabel.text = "%03d" % Statistics.people
   $ClockLabel.text = "%d o'clock" % Statistics.clock
+  $NinePatchRect.visible = Statistics.show_desciption
+  if $NinePatchRect.visible:
+    $NinePatchRect.rect_size.y = Statistics.description_height
+    $NinePatchRect.rect_position.y = 580 - Statistics.description_height
+    $NinePatchRect/RichTextLabel.text = Statistics.description_text
+
 
 func _on_PlantsButton_pressed():
   Statistics.selected_type = "plant"

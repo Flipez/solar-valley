@@ -4,6 +4,10 @@ export var money     : float
 export var people    : int
 export var night  = true
 
+var show_desciption = false
+var description_text = ""
+var description_height = 192
+
 var clock = 0
 
 export var selected_type = "plant"
