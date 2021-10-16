@@ -1,9 +1,8 @@
 extends Area
 
-var surrounding_houses    = 0
-var surrounding_wells     = 0
 export var elapsed_ticks  = 0
-var number_plants         = float(0)
+
+export var base_plant_output = 7
 
 onready var influence_range = $influence_range
 onready var label           = $Spatial
@@ -15,40 +14,46 @@ func _ready():
 
 func tick():
   elapsed_ticks +=1
-  #houses()
-  wells()
-  if (elapsed_ticks % 10 == 0) && number_plants < 10:
-    number_plants += 1.0
+  if label.visible:
+    set_hover_text()
 
+func plant_output():
+  if wells() > 0:
+    return base_plant_output * 2
+  return base_plant_output
 
 func houses():
-  surrounding_houses = 0
+  var surrounding_houses = 0
   for body in influence_range.get_overlapping_areas():
     if body.is_in_group("house"):
-      # increase house counter
       surrounding_houses += 1
-      #decrease plant counter
-      var surrounding_plants = body.get_parent().surrounding_plants
-      if number_plants > 0:
-        if surrounding_plants > 0:
-          number_plants -= body.get_parent().people / 30.0 / surrounding_plants
-      else: 
-        body.get_parent().update_people(-1)
+  return surrounding_houses
 
 
 func wells():
-  surrounding_wells = 0
+  var surrounding_wells = 0
   for body in influence_range.get_overlapping_areas():
     if body.is_in_group("well"):
       surrounding_wells += 1
+  return surrounding_wells
+
+
+func available_plants():
+  if houses() == 0:
+    return plant_output()
+  return plant_output() / houses()
+
+
+func set_hover_text():
+  label_text.text = "Produces " + String(int(plant_output())) + " plants/s\n" \
+                    + "surrounding houses: " + String(houses()) + "\n" \
+                    + "surrounding wells: " + String(wells())
 
 
 func _on_Spatial_mouse_entered():
-  label_text.text = "plants: " + String(int(number_plants)) + "\n" \
-                    + "surrounding houses: " + String(surrounding_houses) + "\n" \
-                    + "surrounding wells: " + String(surrounding_wells) 
-  $Spatial.visible = true
+  set_hover_text()
+  label.visible = true
 
 
 func _on_Spatial_mouse_exited():
-  $Spatial.visible = false
+  label.visible = false
