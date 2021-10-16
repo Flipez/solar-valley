@@ -3,10 +3,11 @@ extends Spatial
 var is_hovered = false
 var type = "grass"
 
-var plant_1_preload = preload("res://Scenes/Hexagons/plant_1.tscn")
-var house_preload   = preload("res://Scenes/Hexagons/house.tscn")
-var solar_preload   = preload("res://Scenes/Hexagons/solar.tscn")
-var well_preload    = preload("res://Scenes/Hexagons/well.tscn")
+var plant_1_preload   = preload("res://Scenes/Hexagons/plant_1.tscn")
+var house_preload     = preload("res://Scenes/Hexagons/house.tscn")
+var solar_preload     = preload("res://Scenes/Hexagons/solar.tscn")
+var well_preload       = preload("res://Scenes/Hexagons/well.tscn")
+var graveyard_preload  = preload("res://Scenes/Hexagons/graveyard.tscn")
 
 var cost_plant = 100
 var cost_house = 200
@@ -75,17 +76,21 @@ func _input(event):
   if event is InputEventMouseButton:
     if event.is_pressed() and event.button_index == BUTTON_LEFT and is_hovered:
       var hex
-      match Statistics.selected_type:
-        "plant":
-          buy_hexagon(plant_1_preload.instance(), cost_plant)
-        "house":
-          hex = house_preload.instance()
-          hex.connect("update_people", Statistics, "update_people")
-          buy_hexagon(hex, cost_house)
-        "solar":
-          buy_hexagon(solar_preload.instance(), cost_solar)
-        "well":
-          buy_hexagon(well_preload.instance(), cost_well)
+      print(Statistics.clock)
+      if Statistics.clock > 0 and Statistics.clock < 3:
+        buy_hexagon(graveyard_preload.instance(), 0)
+      else:
+        match Statistics.selected_type:
+          "plant":
+            buy_hexagon(plant_1_preload.instance(), cost_plant)
+          "house":
+            hex = house_preload.instance()
+            hex.connect("update_people", Statistics, "update_people")
+            buy_hexagon(hex, cost_house)
+          "solar":
+            buy_hexagon(solar_preload.instance(), cost_solar)
+          "well":
+            buy_hexagon(well_preload.instance(), cost_well)
 
 
 func buy_hexagon(hexagon, cost):
