@@ -34,9 +34,6 @@ func _input(event):
   
   if event is InputEventMouseButton:
     if event.is_pressed():
-      print("translation: ", self.translation)
-      print("transform.basis.z: ", transform.basis.z)
-      print("self.translation.z: ", self.translation.z)
       # zoom in
       if (event.button_index == BUTTON_WHEEL_UP) and (self.translation.y > zoom_min):
         self.translation -= transform.basis.z
