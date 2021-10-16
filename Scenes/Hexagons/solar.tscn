@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Objects/dirt.material" type="Material" id=1]
 [ext_resource path="res://Objects/wood.material" type="Material" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Scenes/Hexagons/hexagonal_collision_shape.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/grass.material" type="Material" id=5]
 [ext_resource path="res://Scenes/Hexagons/solar.gd" type="Script" id=6]
-[ext_resource path="res://Objects/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Objects/decoration/colorPurple.material" type="Material" id=8]
 [ext_resource path="res://Objects/decoration/grass.material" type="Material" id=9]
 
@@ -94,14 +93,6 @@ surfaces/1 = {
 radius = 0.8
 height = 0.3
 
-[sub_resource type="DynamicFont" id=5]
-size = 10
-use_filter = true
-font_data = ExtResource( 7 )
-
-[sub_resource type="ViewportTexture" id=6]
-viewport_path = NodePath("Spatial/Viewport")
-
 [node name="solar" type="Area"]
 script = ExtResource( 6 )
 
@@ -182,25 +173,6 @@ collision_mask = 32
 
 [node name="CollisionShape" type="CollisionShape" parent="influence_range"]
 shape = SubResource( 4 )
-
-[node name="Spatial" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.592379, 0 )
-
-[node name="Viewport" type="Viewport" parent="Spatial"]
-size = Vector2( 300, 30 )
-transparent_bg = true
-
-[node name="Label" type="Label" parent="Spatial/Viewport"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
-align = 1
-valign = 1
-
-[node name="Sprite3D" type="Sprite3D" parent="Spatial"]
-flip_v = true
-billboard = 1
-texture = SubResource( 6 )
 
 [connection signal="mouse_entered" from="." to="." method="_on_Spatial_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_Spatial_mouse_exited"]

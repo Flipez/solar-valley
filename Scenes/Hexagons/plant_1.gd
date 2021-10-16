@@ -1,12 +1,11 @@
 extends Area
 
 export var elapsed_ticks  = 0
-
 export var base_plant_output = 7
 
 onready var influence_range = $influence_range
-onready var label           = $Spatial
-onready var label_text      = $Spatial/Viewport/Label
+
+var hovered = false
 
 func _ready():
   pass
@@ -14,7 +13,7 @@ func _ready():
 
 func tick():
   elapsed_ticks +=1
-  if label.visible:
+  if hovered:
     set_hover_text()
 
 func plant_output():
@@ -45,15 +44,17 @@ func available_plants():
 
 
 func set_hover_text():
-  label_text.text = "Produces " + String(int(plant_output())) + " plants/s\n" \
+  Statistics.description_text = "Produces " + String(int(plant_output())) + " plants/s\n" \
                     + "surrounding houses: " + String(houses()) + "\n" \
                     + "surrounding wells: " + String(wells())
 
 
 func _on_Spatial_mouse_entered():
   set_hover_text()
-  label.visible = true
+  Statistics.show_desciption = true
+  hovered = true
 
 
 func _on_Spatial_mouse_exited():
-  label.visible = false
+  Statistics.show_desciption = false
+  hovered = false

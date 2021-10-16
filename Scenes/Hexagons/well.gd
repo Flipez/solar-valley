@@ -1,31 +1,32 @@
 extends Area
 
-var surrounding_plants = 0
+var hovered = false
 
 onready var influence_range = $influence_range
-onready var label           = $Spatial
-onready var label_text      = $Spatial/Viewport/Label
-
-func _ready():
-  pass # Replace with function body.
-
 
 func tick():
-  pass
+  if hovered:
+    set_hover_text()
   
   
 func plants():
-  surrounding_plants = 0
+  var surrounding_plants = 0
   for body in influence_range.get_overlapping_areas():
     if body.is_in_group("plant"):
       surrounding_plants += 1
+  return surrounding_plants
+
+  
+func set_hover_text():
+  Statistics.description_text = "surrounding plants: " + String(plants())
 
 
 func _on_well_mouse_entered():
-  plants()
-  label_text.text = "surrounding plants: " + String(surrounding_plants)
-  $Spatial.visible = true
+  set_hover_text()
+  Statistics.show_desciption = true
+  hovered = true
 
 
 func _on_well_mouse_exited():
-  $Spatial.visible = false
+  Statistics.show_desciption = false
+  hovered = false

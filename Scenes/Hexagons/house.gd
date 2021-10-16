@@ -6,10 +6,9 @@ var people               = 0
 signal update_people
 
 onready var influence_range = $influence_range
-onready var label           = $Spatial
-onready var label_text      = $Spatial/Viewport/Label
 onready var smoke           = $tmpParent/building_house/Smoke
 
+var hovered = false
 
 func _ready():
   smoke.rotation.y -= rotation.y
@@ -46,7 +45,7 @@ func solar():
 
 func tick():
   elapsed_ticks +=1
-  if label.visible:
+  if hovered:
     set_hover_text()
 
   ##logic to calculate max people
@@ -78,14 +77,19 @@ func update_people(amount):
     emit_signal("update_people", amount)
 
 func set_hover_text():
-  label_text.text = "inhabitants: " + String(people) + "/10\n" \
+  Statistics.description_text = "inhabitants: " + String(people) + "/10\n" \
                     + "Consumes " + String(people) + " plants/s\n" \
                     + "surrounding plants: " + String(hex_plants()) + "\n" \
                     + "enough energy: " + String(solar())
 
+
 func _on_building_house_mouse_entered():
-  label.visible = true
+  set_hover_text()
+  Statistics.show_desciption = true
+  hovered = true
 
 
 func _on_building_house_mouse_exited():
-  label.visible = false
+  Statistics.show_desciption = false
+  hovered = false
+
