@@ -12,6 +12,14 @@
 [ext_resource path="res://Objects/UI/Well_Button.png" type="Texture" id=10]
 [ext_resource path="res://Objects/UI/contrast.png" type="Texture" id=11]
 
+[sub_resource type="DynamicFont" id=5]
+size = 52
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = ExtResource( 5 )
+
 [sub_resource type="StreamTexture" id=1]
 flags = 4
 load_path = "res://.import/red_button02.png-442a0552944cb4449a8c25cac4db6861.stex"
@@ -28,21 +36,10 @@ load_path = "res://.import/red_button01.png-ef8e8ada8d3eddc15d1740b6478be2fc.ste
 size = 20
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=5]
-size = 52
-font_data = ExtResource( 5 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 24
-font_data = ExtResource( 5 )
-
-[node name="Control" type="Control"]
+[node name="Control" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Sprite" type="TextureRect" parent="."]
 modulate = Color( 0.647059, 0.545098, 0.443137, 1 )
@@ -55,38 +52,204 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-margin_left = 30.0
-margin_top = 30.0
-margin_right = 994.0
-margin_bottom = 570.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_right = 964.0
-margin_bottom = 540.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 417.0
+margin_top = 31.0
+margin_right = 607.0
+margin_bottom = 569.0
 
-[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
-margin_right = 964.0
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_right = 190.0
 margin_bottom = 485.0
 rect_min_size = Vector2( 0, 485 )
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+[node name="Node2D" type="Node2D" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+position = Vector2( 371.659, 34.9848 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="contrast" type="Sprite" parent="CenterContainer/VBoxContainer/CenterContainer2/Node2D"]
+texture = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/Node2D"]
+margin_left = 65.52
+margin_top = -27.5595
+margin_right = 265.52
+margin_bottom = 36.4405
+custom_fonts/font = SubResource( 5 )
+text = "0-3: ??"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="house_button" type="Sprite" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+position = Vector2( 177.53, 207.803 )
+texture = ExtResource( 6 )
+
+[node name="Plant_Button" type="Sprite" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+position = Vector2( 1.14099, 410.65 )
+texture = ExtResource( 1 )
+
+[node name="solar_button" type="Sprite" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+position = Vector2( 450.298, 358.152 )
+texture = ExtResource( 7 )
+
+[node name="Well_Button" type="Sprite" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+position = Vector2( -290.87, 302.024 )
+texture = ExtResource( 10 )
+
+[node name="Node2D2" type="Node2D" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+position = Vector2( -154.7, 356.024 )
+rotation = 2.09604
+scale = Vector2( 0.595025, 2.37991 )
+
+[node name="well_to_plant" type="Sprite" parent="CenterContainer/VBoxContainer/CenterContainer2/Node2D2"]
+position = Vector2( 12.2914, -6.66031 )
+rotation = 3.11157
+scale = Vector2( 0.993309, 1.10152 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/Node2D2"]
+margin_left = 17.0098
+margin_top = 27.8423
+margin_right = 302.01
+margin_bottom = 57.8423
+rect_rotation = -90.0215
+rect_scale = Vector2( 0.241151, 2.124 )
+custom_fonts/font = SubResource( 6 )
+text = "lets more plants grow"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Node2D3" type="Node2D" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+position = Vector2( 291.345, 290.916 )
+rotation = -0.229064
+
+[node name="solar_to_house" type="Sprite" parent="CenterContainer/VBoxContainer/CenterContainer2/Node2D3"]
+position = Vector2( 19.8904, 1.95782 )
+rotation = 2.34348
+scale = Vector2( 0.595025, 2.37991 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/Node2D3"]
+margin_left = -4.30695
+margin_top = -89.1117
+margin_right = 280.693
+margin_bottom = -59.1117
+rect_rotation = 44.6161
+rect_scale = Vector2( 0.477792, 1.15554 )
+custom_fonts/font = SubResource( 6 )
+text = "more people wanna live here"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="coin" type="Sprite" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+position = Vector2( -170.976, 131.088 )
+scale = Vector2( 0.259581, 0.259581 )
+texture = ExtResource( 8 )
+offset = Vector2( -63.9999, -321.393 )
+
+[node name="coin2" type="Sprite" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+position = Vector2( -169.641, 151.111 )
+scale = Vector2( 0.259581, 0.259581 )
+texture = ExtResource( 8 )
+offset = Vector2( -63.9999, -321.393 )
+
+[node name="coin3" type="Sprite" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+position = Vector2( -149.618, 145.772 )
+scale = Vector2( 0.259581, 0.259581 )
+texture = ExtResource( 8 )
+offset = Vector2( -63.9999, -321.393 )
+
+[node name="massiveMultiplayer" type="Sprite" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+position = Vector2( 29.323, 56.3374 )
+texture = ExtResource( 9 )
+
+[node name="Node2D4" type="Node2D" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+position = Vector2( 92.2902, 112.56 )
+
+[node name="house_to_people" type="Sprite" parent="CenterContainer/VBoxContainer/CenterContainer2/Node2D4"]
+position = Vector2( 12.6709, -0.492798 )
+rotation = 2.38397
+scale = Vector2( 0.595025, 2.37991 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/Node2D4"]
+margin_left = -0.527222
+margin_top = -76.5125
+margin_right = 284.473
+margin_bottom = -46.5125
+rect_rotation = 44.6161
+rect_scale = Vector2( 0.502093, 1.13166 )
+custom_fonts/font = SubResource( 6 )
+text = "houses host people"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Node2D5" type="Node2D" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+position = Vector2( -64.222, 53.4147 )
+
+[node name="people_to_money" type="Sprite" parent="CenterContainer/VBoxContainer/CenterContainer2/Node2D5"]
+position = Vector2( -6.95953, 1.3378 )
+rotation = 1.56578
+scale = Vector2( 0.595025, 2.37991 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/Node2D5"]
+margin_left = -87.4617
+margin_top = -57.6137
+margin_right = 224.538
+margin_bottom = -27.6137
+rect_scale = Vector2( 0.518011, 1.19376 )
+custom_fonts/font = SubResource( 6 )
+text = "people generate money"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Node2D6" type="Node2D" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+position = Vector2( 97.3179, 313.17 )
+rotation = -0.0856711
+
+[node name="plant_to_house" type="Sprite" parent="CenterContainer/VBoxContainer/CenterContainer2/Node2D6"]
+position = Vector2( 0.171448, -5.92102 )
+rotation = -2.48221
+scale = Vector2( 0.595025, 2.37991 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/Node2D6"]
+margin_left = -91.2415
+margin_top = 31.8406
+margin_right = 193.759
+margin_bottom = 61.8406
+rect_rotation = -54.0074
+rect_scale = Vector2( 0.62836, 1.12956 )
+custom_fonts/font = SubResource( 6 )
+text = "people need food"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer"]
 margin_top = 489.0
-margin_right = 964.0
+margin_right = 190.0
 margin_bottom = 534.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
-margin_right = 964.0
-margin_bottom = 45.0
-
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/MarginContainer"]
 margin_right = 190.0
 margin_bottom = 45.0
 
-[node name="back" type="TextureButton" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/CenterContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+margin_right = 190.0
+margin_bottom = 45.0
+
+[node name="back" type="TextureButton" parent="CenterContainer/VBoxContainer/MarginContainer/HBoxContainer/CenterContainer"]
 modulate = Color( 0.564706, 0.564706, 0.564706, 1 )
 margin_right = 190.0
 margin_bottom = 45.0
@@ -94,7 +257,7 @@ texture_normal = SubResource( 1 )
 texture_pressed = SubResource( 2 )
 texture_hover = SubResource( 3 )
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/CenterContainer"]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/MarginContainer/HBoxContainer/CenterContainer"]
 margin_left = 60.0
 margin_top = 10.0
 margin_right = 130.0
@@ -105,170 +268,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2( 788.659, 65.9848 )
-scale = Vector2( 0.5, 0.5 )
-
-[node name="contrast" type="Sprite" parent="Node2D"]
-texture = ExtResource( 11 )
-
-[node name="Label" type="Label" parent="Node2D"]
-margin_left = 65.52
-margin_top = -27.5595
-margin_right = 265.52
-margin_bottom = 36.4405
-custom_fonts/font = SubResource( 5 )
-text = "0-3: ??"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="house_button" type="Sprite" parent="."]
-position = Vector2( 594.53, 238.803 )
-texture = ExtResource( 6 )
-
-[node name="Plant_Button" type="Sprite" parent="."]
-position = Vector2( 418.141, 441.65 )
-texture = ExtResource( 1 )
-
-[node name="solar_button" type="Sprite" parent="."]
-position = Vector2( 787.298, 410.152 )
-texture = ExtResource( 7 )
-
-[node name="Well_Button" type="Sprite" parent="."]
-position = Vector2( 197.13, 308.024 )
-texture = ExtResource( 10 )
-
-[node name="Node2D2" type="Node2D" parent="."]
-position = Vector2( 303.922, 387.024 )
-rotation = 2.34348
-scale = Vector2( 0.595025, 2.37991 )
-
-[node name="well_to_plant" type="Sprite" parent="Node2D2"]
-rotation = 3.11157
-scale = Vector2( 0.993309, 1.10152 )
-texture = ExtResource( 2 )
-
-[node name="Label" type="Label" parent="Node2D2"]
-margin_left = 17.0098
-margin_top = 27.8423
-margin_right = 302.01
-margin_bottom = 57.8423
-rect_rotation = -90.0215
-rect_scale = Vector2( 0.217471, 2.35212 )
-custom_fonts/font = SubResource( 6 )
-text = "lets more plants grow"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Node2D3" type="Node2D" parent="."]
-position = Vector2( 691.696, 332.619 )
-
-[node name="solar_to_house" type="Sprite" parent="Node2D3"]
-position = Vector2( 7.84021, -6.07123 )
-rotation = 2.34348
-scale = Vector2( 0.595025, 2.37991 )
-texture = ExtResource( 2 )
-
-[node name="Label" type="Label" parent="Node2D3"]
-margin_left = -4.30695
-margin_top = -89.1117
-margin_right = 280.693
-margin_bottom = -59.1117
-rect_rotation = 44.6161
-rect_scale = Vector2( 0.512947, 1.29365 )
-custom_fonts/font = SubResource( 6 )
-text = "lets more plants grow"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="coin" type="Sprite" parent="."]
-position = Vector2( 246.024, 162.088 )
-scale = Vector2( 0.259581, 0.259581 )
-texture = ExtResource( 8 )
-offset = Vector2( -63.9999, -321.393 )
-
-[node name="coin2" type="Sprite" parent="."]
-position = Vector2( 247.359, 182.111 )
-scale = Vector2( 0.259581, 0.259581 )
-texture = ExtResource( 8 )
-offset = Vector2( -63.9999, -321.393 )
-
-[node name="coin3" type="Sprite" parent="."]
-position = Vector2( 267.382, 176.772 )
-scale = Vector2( 0.259581, 0.259581 )
-texture = ExtResource( 8 )
-offset = Vector2( -63.9999, -321.393 )
-
-[node name="massiveMultiplayer" type="Sprite" parent="."]
-position = Vector2( 446.323, 87.3374 )
-texture = ExtResource( 9 )
-
-[node name="Node2D4" type="Node2D" parent="."]
-position = Vector2( 514.047, 142.371 )
-
-[node name="house_to_people" type="Sprite" parent="Node2D4"]
-position = Vector2( -1.59961, 3.07483 )
-rotation = 2.38397
-scale = Vector2( 0.595025, 2.37991 )
-texture = ExtResource( 2 )
-
-[node name="Label" type="Label" parent="Node2D4"]
-margin_left = -0.527222
-margin_top = -76.5125
-margin_right = 284.473
-margin_bottom = -46.5125
-rect_rotation = 44.6161
-rect_scale = Vector2( 0.499748, 1.4547 )
-custom_fonts/font = SubResource( 6 )
-text = "houses host people"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Node2D5" type="Node2D" parent="."]
-position = Vector2( 352.778, 84.4147 )
-
-[node name="people_to_money" type="Sprite" parent="Node2D5"]
-position = Vector2( -6.95953, 1.3378 )
-rotation = 1.56578
-scale = Vector2( 0.595025, 2.37991 )
-texture = ExtResource( 2 )
-
-[node name="Label" type="Label" parent="Node2D5"]
-margin_left = -87.4617
-margin_top = -57.6137
-margin_right = 224.538
-margin_bottom = -27.6137
-rect_scale = Vector2( 0.513571, 1.54581 )
-custom_fonts/font = SubResource( 6 )
-text = "people generate money"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Node2D6" type="Node2D" parent="."]
-position = Vector2( 497.669, 347.738 )
-
-[node name="plant_to_house" type="Sprite" parent="Node2D6"]
-position = Vector2( 0.171448, -5.92102 )
-rotation = -2.48221
-scale = Vector2( 0.595025, 2.37991 )
-texture = ExtResource( 2 )
-
-[node name="Label" type="Label" parent="Node2D6"]
-margin_left = -91.2415
-margin_top = 31.8406
-margin_right = 193.759
-margin_bottom = 61.8406
-rect_rotation = -54.0074
-rect_scale = Vector2( 0.622836, 1.26776 )
-custom_fonts/font = SubResource( 6 )
-text = "people need food"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/CenterContainer/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MarginContainer/HBoxContainer/CenterContainer/back" to="." method="_on_back_pressed"]
