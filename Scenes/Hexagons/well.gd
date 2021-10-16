@@ -18,7 +18,10 @@ func plants():
 
   
 func set_hover_text():
-  Statistics.description_text = "surrounding plants: " + String(plants())
+  Statistics.description_height = 100
+  Statistics.description_text = \
+    "Basic Well \n\n" \
+    + "Surrounding Plants: " + String(plants())
 
 
 func _on_well_mouse_entered():

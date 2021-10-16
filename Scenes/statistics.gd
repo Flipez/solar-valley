@@ -6,6 +6,7 @@ export var night  = true
 
 var show_desciption = false
 var description_text = ""
+var description_height = 192
 
 var clock = 0
 

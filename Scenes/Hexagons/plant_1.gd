@@ -35,6 +35,12 @@ func wells():
     if body.is_in_group("well"):
       surrounding_wells += 1
   return surrounding_wells
+  
+func well_text():
+  if wells() > 0:
+    return "Has water from well"
+  else:
+    return "Has no water from well"
 
 
 func available_plants():
@@ -44,9 +50,12 @@ func available_plants():
 
 
 func set_hover_text():
-  Statistics.description_text = "Produces " + String(int(plant_output())) + " plants/s\n" \
-                    + "surrounding houses: " + String(houses()) + "\n" \
-                    + "surrounding wells: " + String(wells())
+  Statistics.description_height = 155
+  Statistics.description_text = \
+    "Basic Field: \n\n" \
+    + "Produces " + String(int(plant_output())) + " plants/s\n" \
+    + "Serves:    " + String(houses()) + " house(s)\n" \
+    + well_text()
 
 
 func _on_Spatial_mouse_entered():

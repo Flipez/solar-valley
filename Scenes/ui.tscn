@@ -527,10 +527,10 @@ __meta__ = {
 [node name="MoneyIcon" type="TextureRect" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -125.624
-margin_top = 36.8654
-margin_right = 2.37842
-margin_bottom = 164.865
+margin_left = -143.462
+margin_top = 10.7028
+margin_right = -15.4598
+margin_bottom = 138.703
 rect_scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 8 )
 __meta__ = {
@@ -540,10 +540,10 @@ __meta__ = {
 [node name="MoneyLabel" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -77.0823
-margin_top = 42.8115
-margin_right = -13.0813
-margin_bottom = 71.8115
+margin_left = -94.92
+margin_top = 16.0
+margin_right = -30.919
+margin_bottom = 45.0
 custom_fonts/font = ExtResource( 14 )
 text = "0000"
 align = 2
@@ -554,10 +554,10 @@ __meta__ = {
 [node name="PeopleIcon" type="TextureRect" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -306.869
-margin_top = 28.541
-margin_right = -256.869
-margin_bottom = 78.541
+margin_left = -280.706
+margin_top = 2.37843
+margin_right = -230.706
+margin_bottom = 52.3784
 texture = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -566,10 +566,10 @@ __meta__ = {
 [node name="PeopleLabel" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -262.598
-margin_top = 41.6223
-margin_right = -198.598
-margin_bottom = 70.6223
+margin_left = -236.435
+margin_top = 16.0
+margin_right = -172.435
+margin_bottom = 45.0
 custom_fonts/font = ExtResource( 14 )
 text = "000"
 align = 2
@@ -580,10 +580,10 @@ __meta__ = {
 [node name="ClockLabel" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -453.78
-margin_top = 41.9255
-margin_right = -346.78
-margin_bottom = 70.9255
+margin_left = -427.617
+margin_top = 16.0
+margin_right = -320.617
+margin_bottom = 45.0
 custom_fonts/font = ExtResource( 14 )
 text = "3 o'clock"
 align = 2
@@ -592,8 +592,8 @@ __meta__ = {
 }
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-margin_left = 740.0
-margin_top = 454.0
+margin_left = 716.0
+margin_top = 408.0
 margin_right = 1009.0
 margin_bottom = 587.0
 texture = ExtResource( 13 )

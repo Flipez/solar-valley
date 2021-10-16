@@ -18,7 +18,10 @@ func houses():
 
 
 func set_hover_text():
-  Statistics.description_text = "surrounding houses: " + String(houses())
+  Statistics.description_height = 100
+  Statistics.description_text = \
+    "Basic Solar Farm \n\n" \
+    + "Serves " + String(houses()) + " houses"
 
 
 func _on_Spatial_mouse_entered():
