@@ -95,7 +95,7 @@ func set_hover_text():
   Statistics.description_text = \
     "Family House: \n\n" \
     + "Inhabitants:  " + String(people) + "/10\n" \
-    + "Consumes    " + String(people) + " plants/s\n" \
+    + "Consumes    " + String(people * 3) + " plants/s\n" \
     + hunger_text() \
     + solar_text()
 
