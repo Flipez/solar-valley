@@ -1,41 +1,84 @@
 extends Control
 
+onready var plant_button  = $HSplitContainer/CenterContainer/VBoxContainer/PlantButton
+onready var plant2_button = $HSplitContainer/CenterContainer/VBoxContainer/Plant2Button
+onready var plant3_button = $HSplitContainer/CenterContainer/VBoxContainer/Plant3Button
+onready var house_button  = $HSplitContainer/CenterContainer/VBoxContainer/HouseButton
+onready var solar_button  = $HSplitContainer/CenterContainer/VBoxContainer/SolarButton
+onready var well_button   = $HSplitContainer/CenterContainer/VBoxContainer/WellButton
+
+onready var money_label  = $HSplitContainer/VSplitContainer/HBoxContainer/MoneyLabel
+onready var people_label = $HSplitContainer/VSplitContainer/HBoxContainer/PeopleLabel
+onready var clock_label  = $HSplitContainer/VSplitContainer/HBoxContainer/ClockLabel
+
+onready var hexagon_label = $HSplitContainer/VSplitContainer/HSplitContainer/NinePatchRect
 
 func _process(_delta):
-  $MoneyLabel.text = "%05d" % Statistics.money
-  $PeopleLabel.text = "%03d" % Statistics.people
-  $ClockLabel.text = "%d o'clock" % Statistics.clock
-  $NinePatchRect.visible = Statistics.show_desciption
-  if $NinePatchRect.visible:
-    $NinePatchRect.rect_size.y = Statistics.description_height
-    $NinePatchRect.rect_position.y = 580 - Statistics.description_height
-    $NinePatchRect/RichTextLabel.text = Statistics.description_text
+  money_label.text = "%05d" % Statistics.money
+  people_label.text = "%03d" % Statistics.people
+  clock_label.text = "%d o'clock" % Statistics.clock
+  hexagon_label.visible = Statistics.show_desciption
+  if hexagon_label.visible:
+    hexagon_label.rect_size.y = Statistics.description_height
+    hexagon_label.rect_position.y = 580 - Statistics.description_height
+    $HSplitContainer/VSplitContainer/HSplitContainer/NinePatchRect/RichTextLabel.text = Statistics.description_text
 
-
-func _on_PlantsButton_pressed():
-  Statistics.selected_type = "plant"
-  $ButtonBackground/BuildSelection/PlantsButton.pressed = true
-  $ButtonBackground/BuildSelection/HouseButton.pressed = false
-  $ButtonBackground/BuildSelection/SolarButtton.pressed = false
-  $ButtonBackground/BuildSelection/WellButton.pressed = false
 
 func _on_HouseButton_pressed():
   Statistics.selected_type = "house"
-  $ButtonBackground/BuildSelection/PlantsButton.pressed = false
-  $ButtonBackground/BuildSelection/HouseButton.pressed = true
-  $ButtonBackground/BuildSelection/SolarButtton.pressed = false
-  $ButtonBackground/BuildSelection/WellButton.pressed = false
+  plant_button.pressed  = false
+  plant2_button.pressed = false
+  plant3_button.pressed = false
+  house_button.pressed  = true
+  solar_button.pressed  = false
+  well_button.pressed   = false
 
-func _on_SolarButtton_pressed():
-  Statistics.selected_type = "solar"
-  $ButtonBackground/BuildSelection/PlantsButton.pressed = false
-  $ButtonBackground/BuildSelection/HouseButton.pressed = false
-  $ButtonBackground/BuildSelection/SolarButtton.pressed = true
-  $ButtonBackground/BuildSelection/WellButton.pressed = false
 
 func _on_WellButton_pressed():
   Statistics.selected_type = "well"
-  $ButtonBackground/BuildSelection/PlantsButton.pressed = false
-  $ButtonBackground/BuildSelection/HouseButton.pressed = false
-  $ButtonBackground/BuildSelection/SolarButtton.pressed = false
-  $ButtonBackground/BuildSelection/WellButton.pressed = true
+  plant_button.pressed  = false
+  plant2_button.pressed = false
+  plant3_button.pressed = false
+  house_button.pressed  = false
+  solar_button.pressed  = false
+  well_button.pressed   = true
+
+
+func _on_PlantButton_pressed():
+  Statistics.selected_type = "plant"
+  plant_button.pressed  = true
+  plant2_button.pressed = false
+  plant3_button.pressed = false
+  house_button.pressed  = false
+  solar_button.pressed  = false
+  well_button.pressed   = false
+
+
+func _on_Plant2Button_pressed():
+  Statistics.selected_type = "plant2"
+  plant_button.pressed  = false
+  plant2_button.pressed = true
+  plant3_button.pressed = false
+  house_button.pressed  = false
+  solar_button.pressed  = false
+  well_button.pressed   = false
+
+
+func _on_Plant3Button_pressed():
+  Statistics.selected_type = "plant3"
+  plant_button.pressed  = false
+  plant2_button.pressed = false
+  plant3_button.pressed = true
+  house_button.pressed  = false
+  solar_button.pressed  = false
+  well_button.pressed   = false
+
+
+func _on_SolarButton_pressed():
+  Statistics.selected_type = "solar"
+  plant_button.pressed  = false
+  plant2_button.pressed = false
+  plant3_button.pressed = false
+  house_button.pressed  = false
+  solar_button.pressed  = true
+  well_button.pressed   = false
