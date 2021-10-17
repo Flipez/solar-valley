@@ -10,9 +10,9 @@ config_version=4
 
 [application]
 
-config/name="Solarpunk"
+config/name="Solar Valley"
 run/main_scene="res://Scenes/main_menu.tscn"
-config/icon="res://icon.png"
+config/icon="res://Objects/UI/house_button.png"
 
 [autoload]
 
