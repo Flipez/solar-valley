@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Plant_Button_Toggled.png-67b5bce11904b76d97e57de51364dd1c.stex"
+path="res://.import/solar_button_disabled.png-18d61273212c26231fcd64d541e664ed.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/UI/Plant_Button_Toggled.png"
-dest_files=[ "res://.import/Plant_Button_Toggled.png-67b5bce11904b76d97e57de51364dd1c.stex" ]
+source_file="res://Objects/UI/solar_button_disabled.png"
+dest_files=[ "res://.import/solar_button_disabled.png-18d61273212c26231fcd64d541e664ed.stex" ]
 
 [params]
 
