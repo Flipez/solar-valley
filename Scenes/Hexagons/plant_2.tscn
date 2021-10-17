@@ -252,7 +252,7 @@ surfaces/1 = {
 "vertex_count": 360
 }
 
-[sub_resource type="ArrayMesh" id=16]
+[sub_resource type="ArrayMesh" id=12]
 resource_name = "grapes"
 surfaces/0 = {
 "aabb": AABB( -0.139497, 0, -0.1193, 0.278995, 0.422618, 0.238599 ),
@@ -291,7 +291,7 @@ surfaces/2 = {
 "vertex_count": 1132
 }
 
-[sub_resource type="ArrayMesh" id=12]
+[sub_resource type="ArrayMesh" id=13]
 surfaces/0 = {
 "aabb": AABB( -0.04, 0, -0.1395, 0.54, 0.025, 0.335 ),
 "array_data": PoolByteArray( 0, 0, 192, 62, 0, 0, 0, 0, 22, 217, 14, 190, 0, 79, 157, 0, 129, 0, 0, 127, 97, 203, 110, 68, 0, 0, 0, 63, 0, 0, 0, 0, 22, 217, 14, 190, 0, 79, 157, 0, 130, 0, 0, 127, 235, 204, 110, 68, 2, 34, 193, 62, 205, 204, 204, 60, 106, 188, 244, 189, 0, 79, 157, 0, 129, 0, 0, 127, 108, 203, 87, 66, 0, 0, 0, 63, 205, 204, 204, 60, 106, 188, 244, 189, 0, 79, 157, 0, 129, 0, 0, 127, 235, 204, 87, 66, 0, 0, 0, 63, 0, 0, 0, 0, 22, 217, 14, 62, 0, 79, 99, 0, 127, 0, 0, 127, 235, 76, 110, 68, 0, 0, 192, 62, 0, 0, 0, 0, 22, 217, 14, 62, 0, 79, 99, 0, 127, 0, 0, 127, 97, 75, 110, 68, 0, 0, 0, 63, 205, 204, 204, 60, 106, 188, 244, 61, 0, 79, 99, 0, 127, 0, 0, 127, 235, 76, 87, 66, 254, 221, 190, 62, 205, 204, 204, 60, 106, 188, 244, 61, 0, 79, 99, 0, 127, 0, 0, 127, 86, 75, 87, 66, 0, 0, 0, 62, 0, 0, 0, 0, 12, 2, 171, 189, 235, 79, 160, 0, 133, 0, 27, 127, 133, 197, 169, 64, 0, 0, 192, 62, 0, 0, 0, 0, 22, 217, 14, 190, 235, 79, 160, 0, 133, 0, 27, 127, 205, 203, 169, 64, 4, 68, 2, 62, 205, 204, 204, 60, 74, 12, 130, 189, 235, 79, 160, 0, 133, 0, 27, 127, 111, 197, 73, 60, 2, 34, 193, 62, 205, 204, 204, 60, 106, 188, 244, 189, 235, 79, 160, 0, 133, 0, 27, 127, 194, 203, 73, 60, 0, 0, 192, 62, 0, 0, 0, 0, 22, 217, 14, 62, 21, 79, 96, 0, 123, 0, 229, 127, 154, 74, 93, 70, 0, 0, 0, 62, 0, 0, 0, 0, 39, 49, 72, 62, 21, 79, 96, 0, 123, 0, 229, 127, 61, 66, 93, 70, 254, 221, 190, 62, 205, 204, 204, 60, 106, 188, 244, 61, 21, 79, 96, 0, 123, 0, 229, 127, 165, 74, 26, 69, 248, 119, 251, 61, 205, 204, 204, 60, 69, 182, 51, 62, 21, 79, 96, 0, 123, 0, 229, 127, 105, 66, 26, 69, 0, 0, 0, 62, 0, 0, 0, 0, 12, 2, 171, 189, 0, 79, 157, 0, 129, 0, 0, 127, 235, 196, 27, 66, 4, 68, 2, 62, 205, 204, 204, 60, 74, 12, 130, 189, 0, 79, 157, 0, 129, 0, 0, 127, 2, 197, 44, 63, 10, 215, 35, 189, 96, 62, 48, 35, 12, 2, 171, 189, 0, 79, 157, 0, 129, 0, 0, 127, 76, 62, 27, 66, 249, 160, 51, 41, 205, 204, 204, 60, 74, 12, 130, 189, 0, 79, 157, 0, 129, 0, 0, 127, 0, 0, 44, 63, 10, 215, 35, 189, 96, 62, 48, 35, 12, 2, 171, 189, 189, 107, 0, 0, 0, 0, 126, 127, 147, 194, 171, 64, 249, 160, 51, 41, 205, 204, 204, 60, 74, 12, 130, 189, 189, 107, 0, 0, 0, 0, 126, 127, 0, 193, 167, 55, 10, 215, 35, 189, 96, 62, 48, 35, 39, 49, 72, 62, 189, 107, 0, 0, 0, 0, 127, 127, 178, 71, 171, 64, 160, 248, 175, 41, 205, 204, 204, 60, 69, 182, 51, 62, 189, 107, 0, 0, 0, 0, 126, 127, 232, 70, 167, 55, 0, 0, 0, 62, 0, 0, 0, 0, 39, 49, 72, 62, 0, 79, 99, 0, 127, 0, 0, 127, 235, 68, 206, 69, 10, 215, 35, 189, 96, 62, 48, 35, 39, 49, 72, 62, 0, 79, 99, 0, 127, 0, 0, 127, 76, 190, 206, 69, 248, 119, 251, 61, 205, 204, 204, 60, 69, 182, 51, 62, 0, 79, 99, 0, 126, 0, 0, 127, 213, 68, 140, 68, 160, 248, 175, 41, 205, 204, 204, 60, 69, 182, 51, 62, 0, 79, 99, 0, 127, 0, 0, 127, 0, 0, 140, 68, 0, 0, 0, 63, 0, 0, 0, 0, 22, 217, 14, 62, 127, 0, 0, 0, 0, 0, 0, 127, 125, 197, 0, 60, 0, 0, 0, 63, 205, 204, 204, 60, 106, 188, 244, 61, 127, 0, 0, 0, 0, 0, 0, 127, 180, 196, 8, 36, 0, 0, 0, 63, 0, 0, 0, 0, 22, 217, 14, 190, 127, 0, 0, 0, 0, 0, 0, 127, 125, 69, 0, 60, 0, 0, 0, 63, 205, 204, 204, 60, 106, 188, 244, 189, 127, 0, 0, 0, 0, 0, 0, 127, 180, 68, 8, 36, 249, 160, 51, 41, 205, 204, 204, 60, 74, 12, 130, 189, 0, 127, 0, 0, 0, 0, 0, 127, 0, 0, 0, 190, 4, 68, 2, 62, 205, 204, 204, 60, 74, 12, 130, 189, 0, 127, 0, 0, 0, 0, 0, 127, 2, 69, 0, 190, 160, 248, 175, 41, 205, 204, 204, 60, 69, 182, 51, 62, 0, 127, 0, 0, 0, 0, 0, 127, 0, 0, 232, 71, 248, 119, 251, 61, 205, 204, 204, 60, 69, 182, 51, 62, 0, 127, 0, 0, 0, 0, 0, 127, 213, 68, 232, 71, 254, 221, 190, 62, 205, 204, 204, 60, 106, 188, 244, 61, 0, 127, 0, 0, 0, 0, 0, 127, 86, 75, 180, 69, 2, 34, 193, 62, 205, 204, 204, 60, 106, 188, 244, 189, 0, 127, 0, 0, 0, 0, 0, 127, 108, 75, 104, 195, 0, 0, 0, 63, 205, 204, 204, 60, 106, 188, 244, 61, 0, 127, 0, 0, 0, 0, 0, 127, 235, 76, 180, 69, 0, 0, 0, 63, 205, 204, 204, 60, 106, 188, 244, 189, 0, 127, 0, 0, 0, 0, 0, 127, 235, 76, 104, 195 ),
@@ -317,15 +317,15 @@ surfaces/1 = {
 "vertex_count": 40
 }
 
-[sub_resource type="CylinderShape" id=13]
+[sub_resource type="CylinderShape" id=14]
 radius = 0.8
 height = 0.3
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=15]
 size = 10
 font_data = ExtResource( 10 )
 
-[sub_resource type="ViewportTexture" id=15]
+[sub_resource type="ViewportTexture" id=16]
 viewport_path = NodePath("Spatial/Viewport")
 
 [node name="Spatial" type="Area"]
@@ -520,8 +520,8 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="pumpkin" type="MeshInstance" parent="tmpParent/plant_2/pumpkin"]
-transform = Transform( 0.0127386, 0, -0.0890937, 0, 0.18, 0, 0.178188, 0, 0.0254773, 0.0309401, 0.0177939, -0.00621158 )
+[node name="pumpkin2" type="MeshInstance" parent="tmpParent/plant_2/pumpkin"]
+transform = Transform( 0.093, 0, 1.86265e-09, 0, 0.35, 0, 0, 0, 0.18, 0.0241973, 0, -0.00691938 )
 mesh = SubResource( 11 )
 material/0 = null
 material/1 = null
@@ -533,7 +533,7 @@ material/0 = null
 
 [node name="grapes" type="MeshInstance" parent="tmpParent/plant_2/grapes"]
 transform = Transform( 0.0970873, 0, 0.0239602, 0, 0.2, 0, -0.0479203, 0, 0.194174, -0.02001, 0.0803514, 0.027121 )
-mesh = SubResource( 16 )
+mesh = SubResource( 12 )
 material/0 = null
 material/1 = null
 material/2 = null
@@ -550,58 +550,58 @@ material/0 = null
 
 [node name="grapes2" type="MeshInstance" parent="tmpParent/plant_2/grapes"]
 transform = Transform( 0.0685331, 0.0084318, -0.0557083, -0.0216675, 0.176112, 0, 0.110583, 0.0136053, 0.1381, 0.0215382, 0.0783991, -0.0137442 )
-mesh = SubResource( 16 )
+mesh = SubResource( 12 )
 material/0 = null
 material/1 = null
 material/2 = null
 
 [node name="grapes3" type="MeshInstance" parent="tmpParent/plant_2/grapes"]
 transform = Transform( 0.0779512, 0, 0.0192376, 0, 0.152752, 0, -0.0384752, 0, 0.155902, -0.00694973, 0.0811722, -0.0142345 )
-mesh = SubResource( 16 )
+mesh = SubResource( 12 )
 material/0 = null
 material/1 = null
 material/2 = null
 
 [node name="grapes4" type="MeshInstance" parent="tmpParent/plant_2/grapes"]
 transform = Transform( 0.0105314, -0.0165235, 0.0980617, 0.0117479, 0.197082, 0.0319469, -0.198541, 0.00815568, 0.0226967, 0.0716435, 0.0714855, -0.0125154 )
-mesh = SubResource( 16 )
+mesh = SubResource( 12 )
 material/0 = null
 material/1 = null
 material/2 = null
 
 [node name="path_end" type="MeshInstance" parent="tmpParent/plant_2"]
 transform = Transform( -0.0205939, 0, -0.19997, 0, 4, 0, 1.17982, 0, -0.00349049, 0.490595, 0.101665, -0.29511 )
-mesh = SubResource( 12 )
+mesh = SubResource( 13 )
 material/0 = null
 material/1 = null
 
 [node name="path_end2" type="MeshInstance" parent="tmpParent/plant_2"]
 transform = Transform( 0.985742, 0, -0.103008, 0, 4, 0, 0.592294, 0, 0.171433, -0.011878, 0.101665, -0.573006 )
-mesh = SubResource( 12 )
+mesh = SubResource( 13 )
 material/0 = null
 material/1 = null
 
 [node name="path_end3" type="MeshInstance" parent="tmpParent/plant_2"]
 transform = Transform( 1.00581, 0, 0.0969619, 0, 4, 0, -0.557531, 0, 0.174924, -0.506948, 0.101665, -0.274827 )
-mesh = SubResource( 12 )
+mesh = SubResource( 13 )
 material/0 = null
 material/1 = null
 
 [node name="path_end4" type="MeshInstance" parent="tmpParent/plant_2"]
 transform = Transform( -5.02681e-08, 0, 0.2, 0, 4, 0, -1.15, 0, -8.74228e-09, -0.490965, 0.101665, 0.295103 )
-mesh = SubResource( 12 )
+mesh = SubResource( 13 )
 material/0 = null
 material/1 = null
 
 [node name="path_end5" type="MeshInstance" parent="tmpParent/plant_2"]
 transform = Transform( -0.985742, 0, 0.103008, 0, 4, 0, -0.592294, 0, -0.171433, 0.00834036, 0.101665, 0.571957 )
-mesh = SubResource( 12 )
+mesh = SubResource( 13 )
 material/0 = null
 material/1 = null
 
 [node name="path_end6" type="MeshInstance" parent="tmpParent/plant_2"]
 transform = Transform( -1.00581, 0, -0.0969619, 0, 4, 0, 0.557531, 0, -0.174924, 0.493102, 0.101665, 0.282299 )
-mesh = SubResource( 12 )
+mesh = SubResource( 13 )
 material/0 = null
 material/1 = null
 
@@ -617,8 +617,8 @@ collision_layer = 32
 collision_mask = 32
 
 [node name="CollisionShape" type="CollisionShape" parent="influence_range"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.57764e-05, -0.00263757, 0.00663912 )
-shape = SubResource( 13 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00226444, -0.00114912, 0.00701964 )
+shape = SubResource( 14 )
 
 [node name="Spatial" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94344, 0 )
@@ -630,7 +630,7 @@ transparent_bg = true
 [node name="Label" type="Label" parent="Spatial/Viewport"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
 align = 1
 valign = 1
 
@@ -638,7 +638,7 @@ valign = 1
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000577451, 0.0019021, 8.8871e-05 )
 flip_v = true
 billboard = 1
-texture = SubResource( 15 )
+texture = SubResource( 16 )
 
 [connection signal="mouse_entered" from="." to="." method="_on_Spatial_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_Spatial_mouse_exited"]
