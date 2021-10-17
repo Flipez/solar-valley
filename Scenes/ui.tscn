@@ -282,18 +282,42 @@ custom_constants/separation = 15
 alignment = 2
 
 [node name="CenterContainer_empty" type="CenterContainer" parent="HSplitContainer/VSplitContainer/HBoxContainer"]
-margin_left = 455.0
-margin_right = 905.0
+margin_left = 346.0
+margin_right = 796.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 450, 0 )
 
 [node name="ClockLabel" type="Label" parent="HSplitContainer/VSplitContainer/HBoxContainer"]
-margin_left = 920.0
+margin_left = 811.0
+margin_top = 10.0
+margin_right = 918.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 14 )
+text = "3 o'clock"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Seperator" type="Label" parent="HSplitContainer/VSplitContainer/HBoxContainer"]
+margin_left = 933.0
+margin_top = 10.0
+margin_right = 940.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 14 )
+text = "|"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DayLabel" type="Label" parent="HSplitContainer/VSplitContainer/HBoxContainer"]
+margin_left = 955.0
 margin_top = 10.0
 margin_right = 1027.0
 margin_bottom = 39.0
 custom_fonts/font = ExtResource( 14 )
-text = "3 o'clock"
+text = "Day 1"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false

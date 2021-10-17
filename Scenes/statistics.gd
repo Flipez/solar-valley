@@ -2,6 +2,7 @@ extends Node
 
 export var money     : float
 export var people    : int
+export var day = 1
 export var night  = true
 
 var show_desciption = false
@@ -13,7 +14,7 @@ var clock = 0
 export var selected_type = "plant"
 
 func _ready():
-  money     = 20000 # change to 200 before submitting game
+  money     = 200 # change to 200 before submitting game
   people    = 0
 
 

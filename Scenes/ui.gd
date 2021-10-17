@@ -10,6 +10,7 @@ onready var well_button   = $HSplitContainer/MarginContainer/CenterContainer/Pan
 onready var money_label  = $HSplitContainer/VSplitContainer/HBoxContainer/MoneyLabel
 onready var people_label = $HSplitContainer/VSplitContainer/HBoxContainer/PeopleLabel
 onready var clock_label  = $HSplitContainer/VSplitContainer/HBoxContainer/ClockLabel
+onready var day_label    = $HSplitContainer/VSplitContainer/HBoxContainer/DayLabel
 
 onready var hexagon_label = $HSplitContainer/VSplitContainer/HSplitContainer/VSplitContainer/MarginContainer/NinePatchRect
 
@@ -25,6 +26,7 @@ func _process(_delta):
   money_label.text = "%05d" % Statistics.money
   people_label.text = "%03d" % Statistics.people
   clock_label.text = "%d o'clock" % Statistics.clock
+  day_label.text = "Day %d" % Statistics.day
   hexagon_label.visible = Statistics.show_desciption
   if Statistics.people > 20:
     plant2_button.set_disabled(false)
@@ -36,7 +38,6 @@ func _process(_delta):
     well_button.set_disabled(false)
   if hexagon_label.visible:
     hexagon_label.rect_min_size.y = Statistics.description_height
-    #hexagon_label.rect_position.y = 580 - Statistics.description_height
     $HSplitContainer/VSplitContainer/HSplitContainer/VSplitContainer/MarginContainer/NinePatchRect/RichTextLabel.text = Statistics.description_text
 
 

@@ -52,7 +52,12 @@ func _process(delta):
   if rotation <= 0:
     directional_light.rotation_degrees.y = 360
   
+  ## day logic
+  var old_clock = Statistics.clock
   Statistics.update_clock(360 - directional_light.rotation_degrees.y)
+  if old_clock == 23 and Statistics.clock == 0:
+    Statistics.day += 1
+
   # the circle has 360 degrees
   # the day has 24 hours
   # --> one hour is 15 degrees
