@@ -50,13 +50,13 @@ rect_min_size = Vector2( 964, 480 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2"]
 margin_left = 215.0
-margin_top = 139.0
+margin_top = 160.0
 margin_right = 748.0
-margin_bottom = 340.0
+margin_bottom = 320.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer"]
 margin_right = 321.0
-margin_bottom = 201.0
+margin_bottom = 160.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer/VBoxContainer"]
 margin_right = 321.0
@@ -85,17 +85,10 @@ margin_bottom = 160.0
 custom_fonts/font = SubResource( 1 )
 text = "mouse wheel:"
 
-[node name="Label5" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer/VBoxContainer"]
-margin_top = 164.0
-margin_right = 321.0
-margin_bottom = 201.0
-custom_fonts/font = SubResource( 1 )
-text = "esc:"
-
 [node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer"]
 margin_left = 325.0
 margin_right = 533.0
-margin_bottom = 201.0
+margin_bottom = 160.0
 
 [node name="Label2" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer/VBoxContainer2"]
 margin_right = 208.0
@@ -123,13 +116,6 @@ margin_right = 208.0
 margin_bottom = 160.0
 custom_fonts/font = SubResource( 1 )
 text = "zoom camera"
-
-[node name="Label6" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer/VBoxContainer2"]
-margin_top = 164.0
-margin_right = 208.0
-margin_bottom = 201.0
-custom_fonts/font = SubResource( 1 )
-text = "pause"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 margin_top = 484.0
