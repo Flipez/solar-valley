@@ -108,7 +108,6 @@ func _input(event):
   if event is InputEventMouseButton:
     if event.is_pressed() and event.button_index == BUTTON_LEFT and is_hovered:
       var hex
-      print(Statistics.clock)
       if Statistics.clock > 0 and Statistics.clock < 3:
         buy_hexagon(graveyard_preload.instance(), 0)
       else:

@@ -16,9 +16,6 @@ onready var hexagon_label = $HSplitContainer/VSplitContainer/HSplitContainer/VSp
 func _ready():
   Statistics.selected_type = "plant"
   plant_button.pressed  = true
-
-
-func _ready():
   plant2_button.set_disabled(true)
   plant3_button.set_disabled(true)
   solar_button.set_disabled(true)
