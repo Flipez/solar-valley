@@ -27,7 +27,7 @@ func enough_plants_available(mod = 0):
   if hex_plants() == 0:
     return false
   
-  var required_plants = (people + mod) / hex_plants()
+  var required_plants = (people + mod) * 3 / hex_plants()
 
   for body in influence_range.get_overlapping_areas():
     if body.is_in_group("plant"):
