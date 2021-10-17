@@ -4,7 +4,7 @@ onready var hexagons = $hexagons
 onready var tick_timer = $Timer
 onready var directional_light = $DirectionalLight
 
-var sun_speed      = -5
+var sun_speed      = -2
 var max_sun_energy = 4
 
 func _ready():
