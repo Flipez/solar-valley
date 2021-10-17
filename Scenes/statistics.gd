@@ -21,7 +21,7 @@ func update_clock(degree):
   # the circle has 360 degrees
   # the day has 24 hours
   # --> one hour is 15 degrees
-  clock = fposmod((degree-150), 360) / 15
+  clock = floor(fposmod((degree-150), 360) / 15)
 
 
 func _process(delta):

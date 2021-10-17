@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/main.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/camera.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Camera.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/ui.tscn" type="PackedScene" id=5]
 
 [node name="Spatial" type="Spatial"]
