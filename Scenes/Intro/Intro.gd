@@ -1,5 +1,5 @@
-extends Control
+extends MarginContainer
 
 
 func _on_Timer_timeout():
-  var _return = get_tree().change_scene("res://Scenes/main_menu.tscn")
+  var _return = get_tree().change_scene("res://Scenes/Intro/Intro_Godot.tscn")
