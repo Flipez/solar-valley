@@ -172,42 +172,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Plant3Button" type="TextureButton" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer"]
+[node name="SolarButton" type="TextureButton" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer"]
 margin_top = 300.0
 margin_right = 100.0
 margin_bottom = 400.0
-toggle_mode = true
-texture_normal = ExtResource( 17 )
-texture_pressed = ExtResource( 19 )
-texture_disabled = ExtResource( 20 )
-
-[node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/Plant3Button"]
-margin_left = 18.3848
-margin_top = 77.1248
-margin_right = 58.3848
-margin_bottom = 117.125
-rect_scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 8 )
-stretch_mode = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/Plant3Button"]
-margin_left = 43.8405
-margin_top = 70.7107
-margin_right = 91.8405
-margin_bottom = 99.7107
-custom_fonts/font = ExtResource( 14 )
-text = "150"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SolarButton" type="TextureButton" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer"]
-margin_top = 400.0
-margin_right = 100.0
-margin_bottom = 500.0
 toggle_mode = true
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 7 )
@@ -237,9 +205,9 @@ __meta__ = {
 }
 
 [node name="WellButton" type="TextureButton" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer"]
-margin_top = 500.0
+margin_top = 400.0
 margin_right = 100.0
-margin_bottom = 600.0
+margin_bottom = 500.0
 toggle_mode = true
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 12 )
@@ -264,6 +232,38 @@ margin_right = 91.8405
 margin_bottom = 99.7107
 custom_fonts/font = ExtResource( 14 )
 text = "200"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Plant3Button" type="TextureButton" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer"]
+margin_top = 500.0
+margin_right = 100.0
+margin_bottom = 600.0
+toggle_mode = true
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 19 )
+texture_disabled = ExtResource( 20 )
+
+[node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/Plant3Button"]
+margin_left = 18.3848
+margin_top = 77.1248
+margin_right = 58.3848
+margin_bottom = 117.125
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/Plant3Button"]
+margin_left = 43.8405
+margin_top = 70.7107
+margin_right = 91.8405
+margin_bottom = 99.7107
+custom_fonts/font = ExtResource( 14 )
+text = "150"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -445,6 +445,6 @@ __meta__ = {
 [connection signal="pressed" from="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/HouseButton" to="." method="_on_HouseButton_pressed"]
 [connection signal="pressed" from="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/PlantButton" to="." method="_on_PlantButton_pressed"]
 [connection signal="pressed" from="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/Plant2Button" to="." method="_on_Plant2Button_pressed"]
-[connection signal="pressed" from="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/Plant3Button" to="." method="_on_Plant3Button_pressed"]
 [connection signal="pressed" from="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/SolarButton" to="." method="_on_SolarButton_pressed"]
 [connection signal="pressed" from="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/WellButton" to="." method="_on_WellButton_pressed"]
+[connection signal="pressed" from="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/Plant3Button" to="." method="_on_Plant3Button_pressed"]
