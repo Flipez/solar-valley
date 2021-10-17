@@ -4,7 +4,7 @@ onready var hexagons = $hexagons
 onready var tick_timer = $Timer
 onready var directional_light = $DirectionalLight
 
-var sun_speed      = -20
+var sun_speed      = -5
 var max_sun_energy = 4
 
 func _ready():
@@ -63,7 +63,7 @@ func _process(delta):
   var a = 13 # time of the mid of the day
   var b = 8  # distance of end and beginning of the night from mid of the day in hours
   var c = 28 # parameter to slow the sunrising and sunset time down
-  var y = (-pow(Statistics.clock - a,2)+pow(b,2))/(c/max_sun_energy)
+  var y = (-pow(fposmod((360 - directional_light.rotation_degrees.y-150), 360) / 15 - a,2)+pow(b,2))/(c/max_sun_energy)
   energy = min(max(y, 0), max_sun_energy)
   
   directional_light.light_energy = energy
