@@ -56,10 +56,8 @@ __meta__ = {
 
 [node name="Panel" type="Panel" parent="HSplitContainer/CenterContainer"]
 self_modulate = Color( 0.321569, 0.486275, 0.215686, 0.611765 )
-margin_left = 50.0
-margin_top = 300.0
-margin_right = 50.0
-margin_bottom = 300.0
+margin_right = 100.0
+margin_bottom = 600.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -79,6 +77,29 @@ toggle_mode = true
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 5 )
 
+[node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/CenterContainer/VBoxContainer/HouseButton"]
+margin_left = 18.3848
+margin_top = 77.1248
+margin_right = 58.3848
+margin_bottom = 117.125
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HSplitContainer/CenterContainer/VBoxContainer/HouseButton"]
+margin_left = 43.8405
+margin_top = 70.7107
+margin_right = 91.8405
+margin_bottom = 99.7107
+custom_fonts/font = ExtResource( 14 )
+text = "300"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="PlantButton" type="TextureButton" parent="HSplitContainer/CenterContainer/VBoxContainer"]
 margin_top = 100.0
 margin_right = 100.0
@@ -86,6 +107,29 @@ margin_bottom = 200.0
 toggle_mode = true
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 6 )
+
+[node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/CenterContainer/VBoxContainer/PlantButton"]
+margin_left = 18.3848
+margin_top = 77.1248
+margin_right = 58.3848
+margin_bottom = 117.125
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HSplitContainer/CenterContainer/VBoxContainer/PlantButton"]
+margin_left = 43.8405
+margin_top = 70.7107
+margin_right = 91.8405
+margin_bottom = 99.7107
+custom_fonts/font = ExtResource( 14 )
+text = "100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Plant2Button" type="TextureButton" parent="HSplitContainer/CenterContainer/VBoxContainer"]
 margin_top = 200.0
@@ -95,6 +139,29 @@ toggle_mode = true
 texture_normal = ExtResource( 16 )
 texture_pressed = ExtResource( 18 )
 
+[node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/CenterContainer/VBoxContainer/Plant2Button"]
+margin_left = 18.3848
+margin_top = 77.1248
+margin_right = 58.3848
+margin_bottom = 117.125
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HSplitContainer/CenterContainer/VBoxContainer/Plant2Button"]
+margin_left = 43.8405
+margin_top = 70.7107
+margin_right = 91.8405
+margin_bottom = 99.7107
+custom_fonts/font = ExtResource( 14 )
+text = "100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Plant3Button" type="TextureButton" parent="HSplitContainer/CenterContainer/VBoxContainer"]
 margin_top = 300.0
 margin_right = 100.0
@@ -102,6 +169,29 @@ margin_bottom = 400.0
 toggle_mode = true
 texture_normal = ExtResource( 17 )
 texture_pressed = ExtResource( 19 )
+
+[node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/CenterContainer/VBoxContainer/Plant3Button"]
+margin_left = 18.3848
+margin_top = 77.1248
+margin_right = 58.3848
+margin_bottom = 117.125
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HSplitContainer/CenterContainer/VBoxContainer/Plant3Button"]
+margin_left = 43.8405
+margin_top = 70.7107
+margin_right = 91.8405
+margin_bottom = 99.7107
+custom_fonts/font = ExtResource( 14 )
+text = "150"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="SolarButton" type="TextureButton" parent="HSplitContainer/CenterContainer/VBoxContainer"]
 margin_top = 400.0
@@ -111,6 +201,29 @@ toggle_mode = true
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 7 )
 
+[node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/CenterContainer/VBoxContainer/SolarButton"]
+margin_left = 18.3848
+margin_top = 77.1248
+margin_right = 58.3848
+margin_bottom = 117.125
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HSplitContainer/CenterContainer/VBoxContainer/SolarButton"]
+margin_left = 43.8405
+margin_top = 70.7107
+margin_right = 91.8405
+margin_bottom = 99.7107
+custom_fonts/font = ExtResource( 14 )
+text = "200"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="WellButton" type="TextureButton" parent="HSplitContainer/CenterContainer/VBoxContainer"]
 margin_top = 500.0
 margin_right = 100.0
@@ -118,6 +231,29 @@ margin_bottom = 600.0
 toggle_mode = true
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 12 )
+
+[node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/CenterContainer/VBoxContainer/WellButton"]
+margin_left = 18.3848
+margin_top = 77.1248
+margin_right = 58.3848
+margin_bottom = 117.125
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HSplitContainer/CenterContainer/VBoxContainer/WellButton"]
+margin_left = 43.8405
+margin_top = 70.7107
+margin_right = 91.8405
+margin_bottom = 99.7107
+custom_fonts/font = ExtResource( 14 )
+text = "200"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VSplitContainer" type="VSplitContainer" parent="HSplitContainer"]
 margin_left = 112.0
