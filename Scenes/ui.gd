@@ -1,17 +1,22 @@
 extends Control
 
-onready var plant_button  = $HSplitContainer/CenterContainer/VBoxContainer/PlantButton
-onready var plant2_button = $HSplitContainer/CenterContainer/VBoxContainer/Plant2Button
-onready var plant3_button = $HSplitContainer/CenterContainer/VBoxContainer/Plant3Button
-onready var house_button  = $HSplitContainer/CenterContainer/VBoxContainer/HouseButton
-onready var solar_button  = $HSplitContainer/CenterContainer/VBoxContainer/SolarButton
-onready var well_button   = $HSplitContainer/CenterContainer/VBoxContainer/WellButton
+onready var plant_button  = $HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/PlantButton
+onready var plant2_button = $HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/Plant2Button
+onready var plant3_button = $HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/Plant3Button
+onready var house_button  = $HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/HouseButton
+onready var solar_button  = $HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/SolarButton
+onready var well_button   = $HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/WellButton
 
 onready var money_label  = $HSplitContainer/VSplitContainer/HBoxContainer/MoneyLabel
 onready var people_label = $HSplitContainer/VSplitContainer/HBoxContainer/PeopleLabel
 onready var clock_label  = $HSplitContainer/VSplitContainer/HBoxContainer/ClockLabel
 
-onready var hexagon_label = $HSplitContainer/VSplitContainer/HSplitContainer/NinePatchRect
+onready var hexagon_label = $HSplitContainer/VSplitContainer/HSplitContainer/VSplitContainer/MarginContainer/NinePatchRect
+
+func _ready():
+  Statistics.selected_type = "plant"
+  plant_button.pressed  = true
+
 
 func _process(_delta):
   money_label.text = "%05d" % Statistics.money
@@ -19,9 +24,9 @@ func _process(_delta):
   clock_label.text = "%d o'clock" % Statistics.clock
   hexagon_label.visible = Statistics.show_desciption
   if hexagon_label.visible:
-    hexagon_label.rect_size.y = Statistics.description_height
-    hexagon_label.rect_position.y = 580 - Statistics.description_height
-    $HSplitContainer/VSplitContainer/HSplitContainer/NinePatchRect/RichTextLabel.text = Statistics.description_text
+    hexagon_label.rect_min_size.y = Statistics.description_height
+    #hexagon_label.rect_position.y = 580 - Statistics.description_height
+    $HSplitContainer/VSplitContainer/HSplitContainer/VSplitContainer/MarginContainer/NinePatchRect/RichTextLabel.text = Statistics.description_text
 
 
 func _on_HouseButton_pressed():

@@ -21,6 +21,8 @@ Audio="*res://Scenes/Audio.tscn"
 
 [display]
 
+window/size/width=1440
+window/size/height=900
 mouse_cursor/custom_image="res://Objects/UI/cursor_pointer3D.png"
 
 [input]

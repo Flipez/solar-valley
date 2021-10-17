@@ -35,49 +35,54 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_right = 1440.0
+margin_bottom = 900.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_right = 1440.0
+margin_bottom = 900.0
 mouse_filter = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="HSplitContainer"]
-margin_right = 100.0
-margin_bottom = 600.0
+[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer"]
+margin_right = 124.0
+margin_bottom = 900.0
+custom_constants/margin_left = 10
+
+[node name="CenterContainer" type="CenterContainer" parent="HSplitContainer/MarginContainer"]
+margin_left = 10.0
+margin_right = 124.0
+margin_bottom = 900.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="HSplitContainer/CenterContainer"]
-self_modulate = Color( 0.321569, 0.486275, 0.215686, 0.611765 )
-margin_right = 100.0
-margin_bottom = 600.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="PanelContainer" type="PanelContainer" parent="HSplitContainer/MarginContainer/CenterContainer"]
+margin_top = 143.0
+margin_right = 114.0
+margin_bottom = 757.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/CenterContainer"]
-margin_right = 100.0
-margin_bottom = 600.0
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 107.0
+margin_bottom = 607.0
 custom_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HouseButton" type="TextureButton" parent="HSplitContainer/CenterContainer/VBoxContainer"]
+[node name="HouseButton" type="TextureButton" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer"]
 margin_right = 100.0
 margin_bottom = 100.0
 toggle_mode = true
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 5 )
 
-[node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/CenterContainer/VBoxContainer/HouseButton"]
+[node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/HouseButton"]
 margin_left = 18.3848
 margin_top = 77.1248
 margin_right = 58.3848
@@ -89,7 +94,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="HSplitContainer/CenterContainer/VBoxContainer/HouseButton"]
+[node name="Label" type="Label" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/HouseButton"]
 margin_left = 43.8405
 margin_top = 70.7107
 margin_right = 91.8405
@@ -100,7 +105,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlantButton" type="TextureButton" parent="HSplitContainer/CenterContainer/VBoxContainer"]
+[node name="PlantButton" type="TextureButton" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer"]
 margin_top = 100.0
 margin_right = 100.0
 margin_bottom = 200.0
@@ -108,7 +113,7 @@ toggle_mode = true
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 6 )
 
-[node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/CenterContainer/VBoxContainer/PlantButton"]
+[node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/PlantButton"]
 margin_left = 18.3848
 margin_top = 77.1248
 margin_right = 58.3848
@@ -120,7 +125,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="HSplitContainer/CenterContainer/VBoxContainer/PlantButton"]
+[node name="Label" type="Label" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/PlantButton"]
 margin_left = 43.8405
 margin_top = 70.7107
 margin_right = 91.8405
@@ -131,7 +136,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Plant2Button" type="TextureButton" parent="HSplitContainer/CenterContainer/VBoxContainer"]
+[node name="Plant2Button" type="TextureButton" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer"]
 margin_top = 200.0
 margin_right = 100.0
 margin_bottom = 300.0
@@ -139,7 +144,7 @@ toggle_mode = true
 texture_normal = ExtResource( 16 )
 texture_pressed = ExtResource( 18 )
 
-[node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/CenterContainer/VBoxContainer/Plant2Button"]
+[node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/Plant2Button"]
 margin_left = 18.3848
 margin_top = 77.1248
 margin_right = 58.3848
@@ -151,7 +156,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="HSplitContainer/CenterContainer/VBoxContainer/Plant2Button"]
+[node name="Label" type="Label" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/Plant2Button"]
 margin_left = 43.8405
 margin_top = 70.7107
 margin_right = 91.8405
@@ -162,7 +167,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Plant3Button" type="TextureButton" parent="HSplitContainer/CenterContainer/VBoxContainer"]
+[node name="Plant3Button" type="TextureButton" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer"]
 margin_top = 300.0
 margin_right = 100.0
 margin_bottom = 400.0
@@ -170,7 +175,7 @@ toggle_mode = true
 texture_normal = ExtResource( 17 )
 texture_pressed = ExtResource( 19 )
 
-[node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/CenterContainer/VBoxContainer/Plant3Button"]
+[node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/Plant3Button"]
 margin_left = 18.3848
 margin_top = 77.1248
 margin_right = 58.3848
@@ -182,7 +187,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="HSplitContainer/CenterContainer/VBoxContainer/Plant3Button"]
+[node name="Label" type="Label" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/Plant3Button"]
 margin_left = 43.8405
 margin_top = 70.7107
 margin_right = 91.8405
@@ -193,7 +198,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SolarButton" type="TextureButton" parent="HSplitContainer/CenterContainer/VBoxContainer"]
+[node name="SolarButton" type="TextureButton" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer"]
 margin_top = 400.0
 margin_right = 100.0
 margin_bottom = 500.0
@@ -201,7 +206,7 @@ toggle_mode = true
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 7 )
 
-[node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/CenterContainer/VBoxContainer/SolarButton"]
+[node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/SolarButton"]
 margin_left = 18.3848
 margin_top = 77.1248
 margin_right = 58.3848
@@ -213,7 +218,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="HSplitContainer/CenterContainer/VBoxContainer/SolarButton"]
+[node name="Label" type="Label" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/SolarButton"]
 margin_left = 43.8405
 margin_top = 70.7107
 margin_right = 91.8405
@@ -224,7 +229,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WellButton" type="TextureButton" parent="HSplitContainer/CenterContainer/VBoxContainer"]
+[node name="WellButton" type="TextureButton" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer"]
 margin_top = 500.0
 margin_right = 100.0
 margin_bottom = 600.0
@@ -232,7 +237,7 @@ toggle_mode = true
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 12 )
 
-[node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/CenterContainer/VBoxContainer/WellButton"]
+[node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/WellButton"]
 margin_left = 18.3848
 margin_top = 77.1248
 margin_right = 58.3848
@@ -244,7 +249,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="HSplitContainer/CenterContainer/VBoxContainer/WellButton"]
+[node name="Label" type="Label" parent="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/WellButton"]
 margin_left = 43.8405
 margin_top = 70.7107
 margin_right = 91.8405
@@ -256,28 +261,28 @@ __meta__ = {
 }
 
 [node name="VSplitContainer" type="VSplitContainer" parent="HSplitContainer"]
-margin_left = 112.0
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_left = 136.0
+margin_right = 1440.0
+margin_bottom = 900.0
 mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/VSplitContainer"]
-margin_right = 912.0
+margin_right = 1304.0
 margin_bottom = 50.0
 mouse_filter = 2
 custom_constants/separation = 15
 alignment = 2
 
 [node name="CenterContainer_empty" type="CenterContainer" parent="HSplitContainer/VSplitContainer/HBoxContainer"]
-margin_left = 78.0
-margin_right = 528.0
+margin_left = 455.0
+margin_right = 905.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 450, 0 )
 
 [node name="ClockLabel" type="Label" parent="HSplitContainer/VSplitContainer/HBoxContainer"]
-margin_left = 543.0
+margin_left = 920.0
 margin_top = 10.0
-margin_right = 650.0
+margin_right = 1027.0
 margin_bottom = 39.0
 custom_fonts/font = ExtResource( 14 )
 text = "3 o'clock"
@@ -287,8 +292,8 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="HSplitContainer/VSplitContainer/HBoxContainer"]
-margin_left = 665.0
-margin_right = 705.0
+margin_left = 1042.0
+margin_right = 1082.0
 margin_bottom = 50.0
 
 [node name="MoneyIcon" type="TextureRect" parent="HSplitContainer/VSplitContainer/HBoxContainer/CenterContainer"]
@@ -302,9 +307,9 @@ __meta__ = {
 }
 
 [node name="MoneyLabel" type="Label" parent="HSplitContainer/VSplitContainer/HBoxContainer"]
-margin_left = 720.0
+margin_left = 1097.0
 margin_top = 10.0
-margin_right = 784.0
+margin_right = 1161.0
 margin_bottom = 39.0
 custom_fonts/font = ExtResource( 14 )
 text = "0000"
@@ -314,8 +319,8 @@ __meta__ = {
 }
 
 [node name="CenterContainer2" type="CenterContainer" parent="HSplitContainer/VSplitContainer/HBoxContainer"]
-margin_left = 799.0
-margin_right = 849.0
+margin_left = 1176.0
+margin_right = 1226.0
 margin_bottom = 50.0
 
 [node name="PeopleIcon" type="TextureRect" parent="HSplitContainer/VSplitContainer/HBoxContainer/CenterContainer2"]
@@ -327,9 +332,9 @@ __meta__ = {
 }
 
 [node name="PeopleLabel" type="Label" parent="HSplitContainer/VSplitContainer/HBoxContainer"]
-margin_left = 864.0
+margin_left = 1241.0
 margin_top = 10.0
-margin_right = 912.0
+margin_right = 1289.0
 margin_bottom = 39.0
 custom_fonts/font = ExtResource( 14 )
 text = "000"
@@ -338,22 +343,49 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/VSplitContainer/HBoxContainer"]
+margin_left = 1304.0
+margin_right = 1304.0
+margin_bottom = 50.0
+
 [node name="HSplitContainer" type="HSplitContainer" parent="HSplitContainer/VSplitContainer"]
 margin_top = 62.0
-margin_right = 912.0
-margin_bottom = 600.0
+margin_right = 1304.0
+margin_bottom = 900.0
 mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="CenterContainer_empty" type="CenterContainer" parent="HSplitContainer/VSplitContainer/HSplitContainer"]
-margin_right = 600.0
-margin_bottom = 538.0
+margin_right = 1002.0
+margin_bottom = 838.0
 rect_min_size = Vector2( 600, 0 )
 mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="NinePatchRect" type="NinePatchRect" parent="HSplitContainer/VSplitContainer/HSplitContainer"]
-margin_left = 612.0
-margin_right = 912.0
-margin_bottom = 538.0
+[node name="VSplitContainer" type="VSplitContainer" parent="HSplitContainer/VSplitContainer/HSplitContainer"]
+margin_left = 1014.0
+margin_right = 1304.0
+margin_bottom = 838.0
+
+[node name="CenterContainer" type="CenterContainer" parent="HSplitContainer/VSplitContainer/HSplitContainer/VSplitContainer"]
+margin_right = 290.0
+margin_bottom = 616.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/VSplitContainer/HSplitContainer/VSplitContainer"]
+margin_top = 628.0
+margin_right = 290.0
+margin_bottom = 838.0
+custom_constants/margin_right = 10
+custom_constants/margin_bottom = 10
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HSplitContainer/VSplitContainer/HSplitContainer/VSplitContainer/MarginContainer"]
+margin_right = 280.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 280, 200 )
 texture = ExtResource( 13 )
 region_rect = Rect2( 0, 0, 100, 100 )
 patch_margin_left = 14
@@ -364,7 +396,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HSplitContainer/VSplitContainer/HSplitContainer/NinePatchRect"]
+[node name="RichTextLabel" type="RichTextLabel" parent="HSplitContainer/VSplitContainer/HSplitContainer/VSplitContainer/MarginContainer/NinePatchRect"]
 margin_left = 10.0595
 margin_top = 9.0
 margin_right = 286.06
@@ -378,9 +410,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="HSplitContainer/CenterContainer/VBoxContainer/HouseButton" to="." method="_on_HouseButton_pressed"]
-[connection signal="pressed" from="HSplitContainer/CenterContainer/VBoxContainer/PlantButton" to="." method="_on_PlantButton_pressed"]
-[connection signal="pressed" from="HSplitContainer/CenterContainer/VBoxContainer/Plant2Button" to="." method="_on_Plant2Button_pressed"]
-[connection signal="pressed" from="HSplitContainer/CenterContainer/VBoxContainer/Plant3Button" to="." method="_on_Plant3Button_pressed"]
-[connection signal="pressed" from="HSplitContainer/CenterContainer/VBoxContainer/SolarButton" to="." method="_on_SolarButton_pressed"]
-[connection signal="pressed" from="HSplitContainer/CenterContainer/VBoxContainer/WellButton" to="." method="_on_WellButton_pressed"]
+[connection signal="pressed" from="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/HouseButton" to="." method="_on_HouseButton_pressed"]
+[connection signal="pressed" from="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/PlantButton" to="." method="_on_PlantButton_pressed"]
+[connection signal="pressed" from="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/Plant2Button" to="." method="_on_Plant2Button_pressed"]
+[connection signal="pressed" from="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/Plant3Button" to="." method="_on_Plant3Button_pressed"]
+[connection signal="pressed" from="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/SolarButton" to="." method="_on_SolarButton_pressed"]
+[connection signal="pressed" from="HSplitContainer/MarginContainer/CenterContainer/PanelContainer/VBoxContainer/WellButton" to="." method="_on_WellButton_pressed"]
