@@ -13,11 +13,25 @@ onready var clock_label  = $HSplitContainer/VSplitContainer/HBoxContainer/ClockL
 
 onready var hexagon_label = $HSplitContainer/VSplitContainer/HSplitContainer/NinePatchRect
 
+func _ready():
+  plant2_button.set_disabled(true)
+  plant3_button.set_disabled(true)
+  solar_button.set_disabled(true)
+  well_button.set_disabled(true)
+
 func _process(_delta):
   money_label.text = "%05d" % Statistics.money
   people_label.text = "%03d" % Statistics.people
   clock_label.text = "%d o'clock" % Statistics.clock
   hexagon_label.visible = Statistics.show_desciption
+  if Statistics.people > 20:
+    plant2_button.set_disabled(false)
+  if Statistics.people > 80:
+    plant3_button.set_disabled(false)
+  if Statistics.people > 40:
+    solar_button.set_disabled(false)
+  if Statistics.people > 60:
+    well_button.set_disabled(false)
   if hexagon_label.visible:
     hexagon_label.rect_size.y = Statistics.description_height
     hexagon_label.rect_position.y = 580 - Statistics.description_height
