@@ -1,11 +1,14 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Objects/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Scenes/menu_background.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/main_menu.gd" type="Script" id=3]
 [ext_resource path="res://Objects/red_button02.png" type="Texture" id=4]
 [ext_resource path="res://Objects/red_button01.png" type="Texture" id=5]
 [ext_resource path="res://Objects/red_button00.png" type="Texture" id=6]
+
+[sub_resource type="StreamTexture" id=7]
+flags = 4
+load_path = "res://.import/menu_background.png-77cdc66c63bfeed414e4bdef8b1bc6a2.stex"
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -43,7 +46,7 @@ __meta__ = {
 modulate = Color( 0.647059, 0.545098, 0.443137, 1 )
 margin_right = 1024.0
 margin_bottom = 600.0
-texture = ExtResource( 2 )
+texture = SubResource( 7 )
 expand = true
 stretch_mode = 7
 
