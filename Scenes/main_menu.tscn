@@ -1,18 +1,17 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Objects/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Scenes/menu_background.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/main_menu.gd" type="Script" id=3]
 [ext_resource path="res://Objects/red_button02.png" type="Texture" id=4]
 [ext_resource path="res://Objects/red_button01.png" type="Texture" id=5]
 [ext_resource path="res://Objects/red_button00.png" type="Texture" id=6]
 
-[sub_resource type="DynamicFont" id=1]
-size = 60
-font_data = ExtResource( 1 )
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/menu_background.png-77cdc66c63bfeed414e4bdef8b1bc6a2.stex"
 
 [sub_resource type="DynamicFont" id=2]
-size = 20
+size = 60
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -41,21 +40,21 @@ __meta__ = {
 
 [node name="Sprite" type="TextureRect" parent="."]
 modulate = Color( 0.647059, 0.545098, 0.443137, 1 )
-margin_right = 1024.0
-margin_bottom = 600.0
-texture = ExtResource( 2 )
+margin_right = 1440.0
+margin_bottom = 900.0
+texture = SubResource( 1 )
 expand = true
 stretch_mode = 7
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_right = 1440.0
+margin_bottom = 900.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 321.0
-margin_top = 103.0
-margin_right = 703.0
-margin_bottom = 497.0
+margin_left = 529.0
+margin_top = 277.0
+margin_right = 911.0
+margin_bottom = 622.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
 margin_right = 382.0
@@ -64,19 +63,19 @@ margin_bottom = 149.0
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer"]
 margin_right = 382.0
 margin_bottom = 149.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Solar Valley
 "
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
 margin_top = 153.0
 margin_right = 382.0
-margin_bottom = 394.0
+margin_bottom = 345.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2"]
 margin_left = 96.0
 margin_right = 286.0
-margin_bottom = 241.0
+margin_bottom = 192.0
 
 [node name="New" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_right = 190.0
@@ -95,34 +94,13 @@ margin_left = 41.0
 margin_top = 10.0
 margin_right = 149.0
 margin_bottom = 35.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "new game"
 
-[node name="Load" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+[node name="Tutorial" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 49.0
 margin_right = 190.0
 margin_bottom = 94.0
-
-[node name="load" type="TextureButton" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Load"]
-modulate = Color( 0.564706, 0.564706, 0.564706, 1 )
-margin_right = 190.0
-margin_bottom = 45.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 6 )
-texture_hover = ExtResource( 5 )
-
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Load"]
-margin_left = 41.0
-margin_top = 10.0
-margin_right = 149.0
-margin_bottom = 35.0
-custom_fonts/font = SubResource( 3 )
-text = "load game"
-
-[node name="Tutorial" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
-margin_top = 98.0
-margin_right = 190.0
-margin_bottom = 143.0
 
 [node name="tutorial" type="TextureButton" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Tutorial"]
 modulate = Color( 0.564706, 0.564706, 0.564706, 1 )
@@ -141,9 +119,9 @@ custom_fonts/font = SubResource( 4 )
 text = "tutorial"
 
 [node name="Control" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
-margin_top = 147.0
+margin_top = 98.0
 margin_right = 190.0
-margin_bottom = 192.0
+margin_bottom = 143.0
 
 [node name="controls" type="TextureButton" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Control"]
 modulate = Color( 0.564706, 0.564706, 0.564706, 1 )
@@ -162,9 +140,9 @@ custom_fonts/font = SubResource( 5 )
 text = "controls"
 
 [node name="Exit" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
-margin_top = 196.0
+margin_top = 147.0
 margin_right = 190.0
-margin_bottom = 241.0
+margin_bottom = 192.0
 
 [node name="exit" type="TextureButton" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Exit"]
 modulate = Color( 0.564706, 0.564706, 0.564706, 1 )
@@ -183,7 +161,6 @@ custom_fonts/font = SubResource( 6 )
 text = "exit"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/New/new" to="." method="_on_new_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Load/load" to="." method="_on_load_game_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Tutorial/tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Control/controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Exit/exit" to="." method="_on_exit_pressed"]
