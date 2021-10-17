@@ -2,6 +2,7 @@ extends Spatial
 
 var is_hovered = false
 var type = "grass"
+var rng = RandomNumberGenerator.new()
 
 var plant_1_preload   = preload("res://Scenes/Hexagons/plant_1.tscn")
 var plant_2_preload   = preload("res://Scenes/Hexagons/plant_2.tscn")
@@ -108,7 +109,9 @@ func _input(event):
   if event is InputEventMouseButton:
     if event.is_pressed() and event.button_index == BUTTON_LEFT and is_hovered:
       var hex
-      if Statistics.clock > 0 and Statistics.clock < 3:
+      rng.randomize()
+      var random = rng.randf()
+      if Statistics.clock > 0 and Statistics.clock < 3 and random <= 0.3:
         buy_hexagon(graveyard_preload.instance(), 0)
       else:
         match Statistics.selected_type:
