@@ -218,7 +218,7 @@ material/0 = null
 material/1 = null
 
 [node name="well" type="MeshInstance" parent="tmpParent/building_well"]
-transform = Transform( 1, 0, 0, 0, 0.875241, 0, 0, 0, 1, -1.19837e-13, 0.2, -1.08287e-13 )
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.027114, 0.2, -1.08287e-13 )
 mesh = SubResource( 5 )
 material/0 = null
 material/1 = SubResource( 6 )
